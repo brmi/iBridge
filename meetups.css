@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800,900');
+
+html,body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.wrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+nav {
+    background: palevioletred;
+    height: 80px;
+    width: 100%;
+}
+
+.intro{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+h1,h2,p {
+    margin: 0;
+}
+
+button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: blue !important;
+}
+button.create {
+    width: 100px;
+    height: 50px;
+    background-color: gainsboro;
+    border: none;
+    font-size: 14px;
+}
+
+button.attend {
+    background-color: gainsboro;
+    border: none;
+    font-size: 14px;
+}
+
+/* Meetups */
+.profile-pic {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.profile-pic img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 20% 0;
+}
+.meetup-item {
+    position: relative;
+    border: 1px solid black;
+    min-height: 100px;
+    border-radius: 5px;
+    display: flex;
+    padding: 20px;
+    margin: 0 0 30px 0;
+}
+
+.meetup-item .event {
+    width: calc(100% - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.meetup-title {
+    margin-bottom: 5px;
+}
+
+.meetups .details {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(148, 148, 148);
+}
