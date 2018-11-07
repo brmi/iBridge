@@ -6,6 +6,14 @@ html,body {
     font-family: 'Montserrat', Arial, sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: white;
+}
+
 .wrapper {
     padding-left: 50px;
     padding-right: 50px;
