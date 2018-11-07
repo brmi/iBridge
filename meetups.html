@@ -14,6 +14,21 @@
             <h1>Meetups</h1>
             <button class='create'>Create</button>
         </div>
+        <div class='create-meetup'>
+            <textarea name="textarea" required
+                rows="5" cols="30"
+                placeholder="Type your meetup description here."></textarea>
+                <div class='details-meetup'>
+                    <input type="text" name="location" required
+                    placeholder="Location" />
+                    <input type="text" name="time" required
+                    placeholder="Time" />
+                </div>
+                <div class='buttons'>
+                    <button class='cancel-meetup'>Cancel</button>
+                    <button class='add-meetup'>Add</button>
+                </div>
+        </div>
         <div class='meetups'>
             <div class='meetup-item'>
                 <div class='profile-pic'>
@@ -67,5 +82,7 @@
             </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./meetups.js"></script>
 </body>
 </html>
