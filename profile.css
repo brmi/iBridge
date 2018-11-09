@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800,900');
+
+html,body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+ul, li {
+    border-radius: 5px;
+    transform: translate(-10px, 0);
+    list-style-type: none;
+    margin:0; 
+    padding:0;
+}
+
+.ProfilePic {
+    transform: translate(60px, 120px);
+}
+
+.ProfileInfo {
+    transform: translate(185px, -160px);
+}
+
+.Online {
+    height: 10px;
+    width: 10px;
+    background-color: #008000;
+    border-radius: 50%;
+    display: inline-block;
+    transform: translate(5px, -3px);
+    opacity: 0.55;
+}
+
+.Bio {
+    width: 600px;
+    transform: translate(260px, -120px);
+}
+
+.Message {
+    width: 120px;
+    transform: translate(950px, 150px);
+}
+
+.Favorite {
+    transform: translate(5px, 5px);
+    color: #ffff00;
+}
+
+.TopTips {
+    transform: translate(100px, -200px);
+}
+
+.Meetups {
+    transform: translate(400px, -100px);
+}
+
+.Meetup {
+    display: inline-block;
+    width: 500px;
+    border: 1px solid lightgray;
+    padding: 5px;
+    margin: 10px;
+}
+
+.MeetupName {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.MeetupTime {
+    font-style: italic;
+}
+
+.MeetupLocation {
+    font-style: italic;
+}
