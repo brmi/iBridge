@@ -22,11 +22,71 @@ nav {
     padding-right: 50px;
 }
 
-.content{
+.title{
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100px;
+}
+
+.signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 10vh;
+    justify-content: center;
+}
+.signup button {
+    width: 100px;
+    height: 50px;
+    margin: 5px;
+    background-color: gainsboro;
+    border: none;
+    font-size: 14px;
+}
+
+profileInfo {
+    display: none;
+    position: absolute;
+    top: 20vh;
+    width: calc(100vw - 100px);
+    min-height: 40vh;
+    z-index: 2;
+    background-color:papayawhip;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+.profileInfo input {
+    border: 0;
+        border-bottom: 1px solid black;
+        outline: 0;
+}
+.profileInfo textarea {
+    margin: 10px;
+    width: 80%;
+    /* height: 20vh; */
+    font-size: 20px;
+}
+
+loginInfo {
+    display: none;
+    position: none;
+    top: 20vh;
+    width: calc(100vw - 100px);
+    min-height: 40vh;
+    z-index: 2;
+    background-color:papayawhip;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+.loginInfo input {
+    border: 0;
+        border-bottom: 1px solid black;
+        outline: 0;
 }
 
 a {
@@ -49,21 +109,7 @@ button:hover {
     background-color: blue !important;
 }
 
-.signup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 10vh;
-    justify-content: center;
-}
-.signup button {
-    width: 100px;
-    height: 50px;
-    margin: 5px;
-    background-color: gainsboro;
-    border: none;
-    font-size: 14px;
-}
+
 
 /* SLIDER */
 div#slider {
