@@ -19,7 +19,7 @@ ul, li {
 }
 
 .ProfilePic {
-    transform: translate(60px, 120px);
+    transform: translate(60px, 25px);
 }
 
 .ProfileInfo {
@@ -37,13 +37,13 @@ ul, li {
 }
 
 .Bio {
+    position: relative;
     width: 600px;
-    transform: translate(260px, -120px);
+    transform: translate(260px, -150px);
 }
 
 .Message {
     width: 120px;
-    transform: translate(950px, 150px);
 }
 
 .Favorite {
@@ -52,15 +52,14 @@ ul, li {
 }
 
 .TopTips {
-    transform: translate(100px, -200px);
+    transform: translate(100px, -250px);
 }
 
 .Meetups {
-    transform: translate(400px, -100px);
+    transform: translate(400px, -140px);
 }
 
 .Meetup {
-    display: inline-block;
     width: 500px;
     border: 1px solid lightgray;
     padding: 5px;

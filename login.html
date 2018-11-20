@@ -16,19 +16,30 @@
         <div class='signup'>
             <h1>Welcome Back</h1>
             <form class='loginInfo'>
-                <input type="text" name="email" required
+                <input id="Email" type="text" name="email" required
                 placeholder="Email:" />
                 <p></p>
-                <input type="text" name="password" required
+                <input id="Password" type="text" name="password" required
                 placeholder="Password:" />
             </form>
         </div>
         <div class="signup">
-            <button><a href='meetups.html'>Sign In</a></button>
-
+            <button id="SignIn">Sign In</button>
         </div>
 
 
     </div>
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+
+    <!-- iBridge Common -->
+    <script src="./common.js"></script>
+    
+    <script src="./login.js"></script>
+    
 </body>
 </html>

@@ -1,68 +1,64 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <meta charset="UTF-8">
-
-    <script src="jquery/js/jquery-1.9.0.min.js"></script>
-    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-    <script src="./profile.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
-    <link href="profile.css" rel="stylesheet"/>
-    <link href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-    <link href="./profile.css" rel="stylesheet"/>
-
     <title>iBridge</title>
     
+    <!-- Navbar -->
+    <script> $(function(){$("#Navbar").load("navbar.html");});</script>
+    <div id="Navbar"></div>
   </head>
   <body>
-
-    <div class="Message">
-      <button type="button" class="btn btn-secondary">Message</button>
-      <i class="fa fa-bookmark fa-2x Favorite" aria-hidden="true"></i>
-    </div>
-
-    <div class="ProfilePic"><img class="img-circle" style="width:175px; height:175px" src="images/Stallman.jpg"></div>
+    <div class="ProfilePic"><img class="img-circle" style="width:175px; height:175px" src="images/kermit.png"></div>
     <div class="ProfilePic">
       <div class="ProfileInfo">
-        <!-- Name, IsOnline, Location, Language, {Mentor, Mentee} -->
-        <h3>Richard Stallman<span id="IsOnlineDot" class="Online"></span></h3>
-        <p>California, USA</p><p>English</p><p>Mentor</p>
-        <!-- Bio -->
+        <h3>
+          <span id="FirstName"></span> 
+          <span id="LastName"></span>
+          <span id="IsOnlineDot" class="Online"></span>
+        </h3>
+        <p>
+          <span id="School"></span><br>
+          <span id="Country"></span><br>
+          <span id="UserType">Mentor</span>
+          <div class="Message">
+            <button type="button" class="btn btn-secondary">Message</button>
+            <i class="fa fa-bookmark fa-2x Favorite" aria-hidden="true"></i>
+          </div>
+        </p>
         <div class="text-truncate Bio">
-            Hi, my name is Richard Stallman and I have an honorary PhD from MIT. 
-            In my free (as in freedom) time, I like to give lectures and correct people when they say Linux and not GNU/Linux.
-            <div class="Interests">
-                <!-- Interests -->
-                <br>
-                <button type="button" class="btn btn-secondary Interest">Emacs</button>
-                <button type="button" class="btn btn-secondary Interest">Open Source</button>
-            </div>
-        </div>
-      </div>
-      <div class="TopTips">
-        <!-- Top Tips -->
-        <h3>Top Tips</h3>
-        <ol type="1">
-          <li>Only use free software.</li>
-          <li>Don't use non-free software.</li>
-        </ol>
-        <div class="Meetups">
-          <h3>Meetups</h3>
-          <ul>
-            <li class="Meetup">
-              <p class="MeetupName">Henry Samueli School of Engineering Distinguished Speaker Series</p>
-              <p class="MeetupDescription">Come listen to me talk.</p>
-              <p class="MeetupTime">Time: Tuesday, November 13 @ 6pm</p>
-              <p class="MeetupLocation">Location: ENGR IX</p>
-            </li>
-          </ul>
+          <span id="Description"></span>
+          <div class="Interests"><br></div>
         </div>
       </div>
     </div>
+    <div class="TopTips">
+      <h3>Top Tips</h3>
+      <ol id="ListOfTips"></ol>
+      <div class="Meetups">
+          <h3>Meetups</h3>
+          <ul id="ListOfMeetups"></ul>
+      </div>
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <!-- iBridge Common -->
+    <script src="./common.js"></script>
+
+    <script src="./profile.js"></script>
+    <link href="./profile.css" rel="stylesheet"/>
+
+    <!-- Bootstrap-->    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <!-- Font-awesome -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+
   </body>
 </html>
