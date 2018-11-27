@@ -1,50 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <!-- iBridge Common -->
+    <script src="./common.js"></script>
+    <script src="./signUp.js?newversion"></script>
+
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="signUp.css">
     <title>Sign Up</title>
+
 </head>
 <body>
-    <nav>iBridge</nav>
+    <nav><a href='./index.html'>iBridge</a></nav>
     <div class='wrapper'>
         <div class='title'>
             <h1>Sign Up</h1>
         </div>
         <form class='profileInfo'>
-            <input type="text" name="email" required
+            <input type="text" id="email" name="email" required
             placeholder="Email" />
             <p></p>
-            <input type="text" name="password" required
+            <input type="text" id="password" name="password" required
             placeholder="Password" />
             <p></p>
-            <input type="text" name="name" required
-            placeholder="Name:" />
+            <input type="text" id="firstname" name="firstname" required
+            placeholder="First Name" />
             <p></p>
-            <input type="text" name="nationality" required
-            placeholder="I'm from: <country>" />
-                <p></p>
-                <input type="text" name="userGroup" required
-                placeholder="I an a <mentor/mentee>" />
-                    <p></p>
-                    <input type="text" name="major" required
-                    placeholder="Major:" />
-                    <p></p>
-                    <input type="text" name="hobby" required
-                    placeholder="Hobbies:" />
-
+            <input type="text" id="lastname" name="lastname" required
+            placeholder="Last Name" />
+            <p></p>
+            <input type="text" id="nationality" name="nationality" required
+            placeholder="I'm from <country>" />
+            <p></p>
+            <select id="usertype">
+                <option value="" disabled selected>Select</option>
+                <option value="Mentor">Mentor</option>
+                <option value="Mentee">Mentee</option>
+            </select>
+            <p></p>
+            <input type="text" id="school" name="school" required
+            placeholder="School" />
+            <p></p>
+            <input type="text" id="major" name="major" required
+            placeholder="Major" />
+            <p></p>
             <div class='profileInfo'>
-                <textarea name="textarea" required
+                <textarea id="bio" name="textarea" required
                 rows="5" cols="30"
                 placeholder="Bio"></textarea>
             </div>
-
         </form>
-        <!-- Jump to where? edit link later -->
+
         <div class='signup'>
-            <button><a href='index.html'>Done</a></button>
+            <button class='done'>Done</button>
         </div>
 
+        <div class='signin'>
+            <button><a href='http://localhost:8000/login.html'>Already have an account? Sign In</a></button>
+        </div>
+
+        <div id='FieldError' hidden><p>Cannot leave fields blank.</p></div>
+        <div id='EmailError' hidden><p>Email already in use.</p></div>
     </div>
 </body>
 </html>

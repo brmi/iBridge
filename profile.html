@@ -4,6 +4,14 @@
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <!-- iBridge Common -->
+    <script src="./common.js"></script>
+
+    <script src="./profile.js"></script>
+    <link href="./profile.css" rel="stylesheet"/>
+
     <meta charset="UTF-8">
     <title>iBridge</title>
     
@@ -12,8 +20,9 @@
     <div id="Navbar"></div>
   </head>
   <body>
-    <div class="ProfilePic"><img class="img-circle" style="width:175px; height:175px" src="images/kermit.png"></div>
+    <!-- @todo ProfilePic div is taking up too much space -->
     <div class="ProfilePic">
+        <img class="img-circle" style="width:175px; height:175px" src="images/kermit.png">
       <div class="ProfileInfo">
         <h3>
           <span id="FirstName"></span> 
@@ -38,19 +47,11 @@
     <div class="TopTips">
       <h3>Top Tips <span class="AddTipPlaceholder"></span></h3>
       <ol class="ListOfTips"></ol>
-      <div class="Meetups">
-        <h3>Meetups</h3>
-        <ul id="ListOfMeetups"></ul>
-      </div>
     </div>
-
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-    <!-- iBridge Common -->
-    <script src="./common.js"></script>
-
-    <script src="./profile.js"></script>
-    <link href="./profile.css" rel="stylesheet"/>
+    <div class="Meetups">
+      <h3>Meetups</h3>
+      <ul id="ListOfMeetups"></ul>
+    </div>
 
     <!-- Bootstrap-->    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

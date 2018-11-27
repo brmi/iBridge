@@ -77,10 +77,14 @@ $(document).ready(() => {
     });
 
     Firestore.collection("Meetups").where("createdby", "==", ProfileID).get().then(function(Query){
-        Query.forEach(function(Doc){
-            const Meetup = Doc.data();
-            $("#ListOfMeetups").append("<li class='Meetup'><p class='MeetupName'>" + Meetup.name + "</p><p class='MeetupDescription'>" + Meetup.description + "</p><p class='MeetupTime'>Time: " + Meetup.time + "</p><p class='MeetupLocation'>Location: " + Meetup.location + "</p><button type='submit'>Interested</button></li>");
-        });
+        if (Query.empty) {
+            $("#ListOfMeetups").append("<li class='Meetup'><p class='MeetupName'>No Meetups</p><p class='MeetupDescription'>Visit the Meetups tab to create meetups!</p></li>");
+        } else {
+            Query.forEach(function(Doc){
+                const Meetup = Doc.data();
+                $("#ListOfMeetups").append("<li class='Meetup'><p class='MeetupName'>" + Meetup.name + "</p><p class='MeetupDescription'>" + Meetup.description + "</p><p class='MeetupTime'>Time: " + Meetup.time + "</p><p class='MeetupLocation'>Location: " + Meetup.location + "</p><button type='submit'>Interested</button></li>");
+            });
+        }
     });
 
     if (bAllowEditing) {

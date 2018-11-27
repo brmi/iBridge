@@ -29,14 +29,15 @@ nav {
     height: 100px;
 }
 
-.signup {
+.signup, .signin {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 10vh;
     justify-content: center;
 }
-.signup button {
+
+.signup button, .signin button {
     width: 100px;
     height: 50px;
     margin: 5px;
@@ -136,4 +137,9 @@ div#slider figure {
     75% { left: -300%; }
     95% { left: -300%; }
     100% { left: -400%; }
+}
+
+#FieldError, #EmailError {
+    text-align: center;
+    color: red;
 }
