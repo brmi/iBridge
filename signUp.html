@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -7,64 +8,54 @@
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
     <!-- iBridge Common -->
     <script src="./common.js"></script>
-    <script src="./signUp.js?newversion"></script>
+    <script src="./signUp.js"></script>
 
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="signUp.css">
-    <title>Sign Up</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="signUp.css">
+  <title>iBridge - SignUp</title>
 
 </head>
+
 <body>
     <nav><a href='./index.html'>iBridge</a></nav>
-    <div class='wrapper'>
-        <div class='title'>
-            <h1>Sign Up</h1>
+  <main>
+    <h1>Sign Up</h1>
+      <div class='profileInfo'>
+        <div class="grid-container">
+        <img class='avatar' src="images/avatar_female.png" alt="Avatar">
+        <div class='email'>
+          <input type="text" id="email" required placeholder="Email" />
+          <input type="text" id="password" required placeholder="Password" />
         </div>
-        <form class='profileInfo'>
-            <input type="text" id="email" name="email" required
-            placeholder="Email" />
-            <p></p>
-            <input type="text" id="password" name="password" required
-            placeholder="Password" />
-            <p></p>
-            <input type="text" id="firstname" name="firstname" required
-            placeholder="First Name" />
-            <p></p>
-            <input type="text" id="lastname" name="lastname" required
-            placeholder="Last Name" />
-            <p></p>
-            <input type="text" id="nationality" name="nationality" required
-            placeholder="I'm from <country>" />
-            <p></p>
-            <select id="usertype">
-                <option value="" disabled selected>Select</option>
-                <option value="Mentor">Mentor</option>
-                <option value="Mentee">Mentee</option>
-            </select>
-            <p></p>
-            <input type="text" id="school" name="school" required
-            placeholder="School" />
-            <p></p>
-            <input type="text" id="major" name="major" required
-            placeholder="Major" />
-            <p></p>
-            <div class='profileInfo'>
-                <textarea id="bio" name="textarea" required
-                rows="5" cols="30"
-                placeholder="Bio"></textarea>
-            </div>
-        </form>
-
-        <div class='signup'>
-            <button class='done'>Done</button>
+        <div class="name">
+            <input type="text" id="firstname" required placeholder="First Name:" />
+            <input type="text" id="lastname" required placeholder="Last Name:" />
         </div>
-
-        <div class='signin'>
-            <button><a href='http://localhost:8000/login.html'>Already have an account? Sign In</a></button>
+        <div class="country">
+          <input type="text" id="nationality" required placeholder="I'm from: <country>" />
         </div>
-
-        <div id='FieldError' hidden><p>Cannot leave fields blank.</p></div>
-        <div id='EmailError' hidden><p>Email already in use.</p></div>
+        <div class="role">
+          <input type="radio" name="role" value="Mentor">Mentor</input>
+          <input type="radio" name="role" value="Mentee">Mentee</input>
+        </div>
+        <div class="school">
+            <input type="text" id="school" required placeholder="School:" />
+        </div>
+        <div class="major">
+          <input type="text" id="major" required placeholder="Major:" />
+        </div>
+        <div class='bio'>
+          <textarea id="textarea" required rows="5" cols="30" placeholder="Bio"></textarea>
+        </div>
+        </div>
     </div>
+    </main>
+
+    <div class='signup'>
+        <button class='signup done'>Done</button>
+    </div>
+
+    <div class='EmailError' hidden><p>Email already in use.</p></div>
+    <div class='FieldError' hidden><p>Fields cannot be empty.</p></div>
 </body>
 </html>

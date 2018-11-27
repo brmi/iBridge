@@ -7,14 +7,16 @@ $(document).ready(() => {
         const FirstName = $("#firstname").val();
         const LastName = $("#lastname").val();
         const Nationality = $("#nationality").val();
-        const UserType = $("#usertype").val();
+        const UserType = $("input[name=role]:checked").val();
         const School = $("#school").val();
         const Major = $("#major").val();
-        const Bio = $("#bio").val();
+        const Bio = $("#textarea").val();
+
+        console.log(Email, Password, FirstName, LastName, Nationality, UserType, School, Major, Bio);
 
         if (!(Email && Password && FirstName && LastName && Nationality && UserType && Major && Bio && School)) {
-            $("#EmailError").hide();
-            $("#FieldError").show();
+            $(".EmailError").hide();
+            $(".FieldError").show();
             return;
         }
         
@@ -33,8 +35,8 @@ $(document).ready(() => {
             });
 
             if (EmailIsInUse) {
-                $("#FieldError").hide();
-                $("#EmailError").show();
+                $(".FieldError").hide();
+                $(".EmailError").show();
             } else {
                 var Step1 = Firestore.collection("Accounts").add({
                     email: Email,

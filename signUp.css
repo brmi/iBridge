@@ -1,145 +1,187 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800,900');
 
-html,body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Montserrat', Arial, sans-serif;
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 nav {
-    background: palevioletred;
-    height: 10vh;
-    width: 100%;
-    font-size: 32px;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: palevioletred;
+  height: 10vh;
+  width: 100%;
+  font-size: 32px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.wrapper {
-    padding-left: 50px;
-    padding-right: 50px;
+main {
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
-.title{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
+h1 {
+  position: relative;
+  left: 17%;
+  /* border: 3px solid #73AD21; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
 }
 
-.signup, .signin {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 10vh;
-    justify-content: center;
+.grid-container {
+  display: grid;
+  /* grid-gap: auto; */
+  padding: 0px;
+  /* grid-template-columns: [col] auto [col] auto [col] auto [col] auto;
+  grid-template-rows: [row] auto [row] auto [row] ; */
 }
 
-.signup button, .signin button {
-    width: 100px;
-    height: 50px;
-    margin: 5px;
-    background-color: gainsboro;
-    border: none;
-    font-size: 14px;
+.grid-container>div {
+  /* padding:20px 0; */
 }
 
-profileInfo {
-    display: none;
-    position: absolute;
-    top: 20vh;
-    width: calc(100vw - 100px);
-    min-height: 40vh;
-    z-index: 2;
-    background-color:papayawhip;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
+.avatar {
+  border-radius: 50%;
+  width: 70px;
+  justify-content: flex-start;
+  grid-column: col / span 1;
+  grid-row: row / span 1;
 }
+
+.email {
+  grid-column: col 2 / span 1;
+  grid-row: row 1/span 2;
+  display: flex;
+  flex-direction: column;
+}
+/*
+.pw {
+  grid-column: col 3/ span 2;
+  grid-row: row 2;
+} */
+
+.name {
+  grid-column: col / span 6;
+  grid-row: row 3;
+}
+
+.country {
+  grid-column: col / span 6;
+  grid-row: row 4;
+}
+
+.role {
+  grid-column: col / span 4;
+  grid-row: row 5;
+}
+
+.school {
+    grid-column: col / span 4;
+    grid-row: row 6;
+}
+
+.major {
+  grid-column: col / span 4;
+  grid-row: row 7;
+}
+
+.bio {
+  grid-column: col 4 / span 3;
+  grid-row: row / span 4;
+}
+
+.profileInfo {
+  position: relative;
+  /* top: 1vh; */
+  width: 800px;
+  padding: 0% 0 0;
+  margin: auto;
+  /* min-height: 40vh; */
+  z-index: 2;
+  background-color: white;
+  /* flex-direction: row; */
+  justify-content: space-around;
+  align-items: center;
+}
+
 .profileInfo input {
-    border: 0;
-        border-bottom: 1px solid grey;
-        outline: 0;
+  border: 0;
+  border-bottom: 1px solid grey;
+  outline: 0;
 }
+
 .profileInfo textarea {
-    margin: 10px;
-    width: 80%;
-    /* height: 20vh; */
-    font-size: 20px;
+  margin: 10px;
+  width: 80%;
+  /* height: 20vh; */
+  font-size: 20px;
+}
+
+.accountInfo {
+  justify-content: flex-end;
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 10vh;
+  justify-content: center;
+}
+
+.signup button {
+  width: 100px;
+  height: 50px;
+  margin: 5px;
+  background-color: gainsboro;
+  border: none;
+  font-size: 14px;
 }
 
 loginInfo {
-    display: none;
-    position: none;
-    top: 20vh;
-    width: calc(100vw - 100px);
-    min-height: 40vh;
-    z-index: 2;
-    background-color:papayawhip;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
+  display: none;
+  position: none;
+  top: 20vh;
+  width: calc(100vw - 100px);
+  min-height: 40vh;
+  z-index: 2;
+  background-color: papayawhip;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
 }
+
 .loginInfo input {
-    border: 0;
-        border-bottom: 1px solid black;
-        outline: 0;
+  border: 0;
+  border-bottom: 1px solid black;
+  outline: 0;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
+
 a:hover {
-    color: white;
+  color: white;
 }
 
-
-
-h1,h2,p {
-    margin: 0;
+h1, h2, p {
+  margin: 0;
 }
 
 button:hover {
-    cursor: pointer;
-    color: white;
-    background-color: blue !important;
+  cursor: pointer;
+  color: white;
+  background-color: blue !important;
 }
 
-
-
-/* SLIDER */
-div#slider {
-     overflow: hidden;
-     height: 70vh;
-}
-div#slider figure img { width: 20%; float: left; }
-div#slider figure {
-  position: relative;
-  width: 500%;
-  margin: 0;
-  left: 0;
-  text-align: left;
-  font-size: 0;
-  animation: 25s slidy infinite;
-}
-@keyframes slidy {
-    0% { left: 0%; }
-    20% { left: 0%; }
-    25% { left: -100%; }
-    45% { left: -100%; }
-    50% { left: -200%; }
-    70% { left: -200%; }
-    75% { left: -300%; }
-    95% { left: -300%; }
-    100% { left: -400%; }
-}
-
-#FieldError, #EmailError {
+.EmailError, .FieldError {
     text-align: center;
     color: red;
 }
