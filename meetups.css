@@ -39,6 +39,7 @@ button.create, button.add-meetup, button.cancel-meetup {
     background-color: gainsboro;
     border: none;
     font-size: 14px;
+    font-weight: 800;
 }
 
 button.attend {
@@ -51,9 +52,16 @@ button.attend {
 .profile-pic {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-right: 20px;
+}
+
+.profile-pic .name{
+    font-weight:800;
+    padding-top: 10px;
+    text-align: center;
 }
 
 .profile-pic img {
@@ -87,6 +95,7 @@ button.attend {
 .meetups .details {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: rgb(148, 148, 148);
 }
 
