@@ -11,8 +11,8 @@ $(document).ready(() => {
     Firestore.collection("Profiles").where("id", "==", ProfileID).get().then(function(Query){
         Query.forEach(function(Doc){
             const Profile = Doc.data();
-            $("#FirstName").text(Profile.first);
-            $("#LastName").text(Profile.last);
+            let name = Profile.first + ' ' + Profile.last;
+            $("#Name").text(name.toString());
             $("#School").text(Profile.school);
             $("#Country").text(Profile.country);
             $("#Description").text(Profile.bio);
@@ -82,7 +82,18 @@ $(document).ready(() => {
         } else {
             Query.forEach(function(Doc){
                 const Meetup = Doc.data();
-                $("#ListOfMeetups").append("<li class='Meetup'><p class='MeetupName'>" + Meetup.name + "</p><p class='MeetupDescription'>" + Meetup.description + "</p><p class='MeetupTime'>Time: " + Meetup.time + "</p><p class='MeetupLocation'>Location: " + Meetup.location + "</p><button type='submit'>Interested</button></li>");
+                let MeetupHTML = `<div class='meetup-item'>
+                <div class='event'>
+                    <h2 class='meetup-title'>`+ Meetup.name +`</h2>
+                    <p class='description'>` + Meetup.description +`</p>
+                    <div class='details'>
+                        <p>`+ Meetup.location +`</p>
+                        <p>`+ Meetup.time +`</p>
+                    </div>
+                </div>
+            </div>`;
+                $("#ListOfMeetups").append(MeetupHTML);
+                // $("#ListOfMeetups").append("<li class='Meetup'><p class='MeetupName'>" + Meetup.name + "</p><p class='MeetupDescription'>" + Meetup.description + "</p><p class='MeetupTime'>Time: " + Meetup.time + "</p><p class='MeetupLocation'>Location: " + Meetup.location + "</p><button type='submit'>Interested</button></li>");
             });
         }
     });
@@ -126,7 +137,7 @@ function AllowEditing(Firestore, MyID) {
     /* Edit bio */
     var IsEditingBio = false;
 
-    $(".Bio").prepend('<i class="far fa-edit EditBio" style="cursor:pointer"></i>');
+    // $(".Bio").prepend('<i class="far fa-edit EditBio" style="cursor:pointer"></i>');
 
     $(".EditBio").on("click", function(){
         if (IsEditingBio) {
@@ -249,7 +260,7 @@ function AddEditableTip(Firestore, MyID, Tip) {
 }
 
 function CreateEditableInterest(Interest) {
-    return "<span class='Interest'><button type='button' class='btn btn-secondary'><span class='InterestText'>" + Interest + "</span>    <i class='fas fa-minus RemoveInterest'></i></button></span>";
+    return "<span class='Interest'><button type='button' class='btn btn-secondary Interest'><span class='InterestText'>" + Interest + "</span>    <i class='fas fa-minus RemoveInterest'></i></button></span>";
 }
 
 function HasInterest(Interest) {

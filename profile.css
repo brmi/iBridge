@@ -1,89 +1,202 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800,900');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,800,900');
 
 html,body {
     height: 100%;
     margin: 0;
     font-family: 'Montserrat', Arial, sans-serif;
 }
-
-h3 {
-    font-weight: bold;
+.container {
+    padding-left: 100px;
+    padding-right: 100px;
 }
-
-ul, li {
-    border-radius: 5px;
-    transform: translate(-10px, 0);
-    list-style-type: none;
-    margin:0; 
-    padding:0;
+.main-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
 }
-
-.ProfilePic {
-    transform: translate(60px, 25px);
+.info p {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
 }
-
-.ProfileInfo {
-    transform: translate(185px, -160px);
+#Name {
+    font-size: 24px;
+    margin-right: 5px;
 }
-
-.Online {
-    height: 10px;
+.name {
+    display: flex;
+    align-items: center;
+}
+.online-dot {
     width: 10px;
-    background-color: #008000;
+    height: 10px;
     border-radius: 50%;
-    display: inline-block;
-    transform: translate(5px, -3px);
-    opacity: 0.55;
+    background-color: #50C470;
 }
 
-.Bio {
+.EditBio {
+    margin-left: 5px;
+}
+.fa-plus {
+    font-size: 24px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100px;
+}
+
+button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: blue !important;
+}
+button.message {
+    width: 100px;
+    height: 50px;
+    background-color: gainsboro;
+    border: none;
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 15px;
+}
+
+button#CreateTip {
+    width: 80px;
+    height: 30px;
+    background-color: gainsboro;
+    border: none;
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 15px;
+}
+
+.star {
+    padding-left: 10px;
+}
+
+.star:hover path{
+    cursor: pointer;
+    fill: #ffe928;
+}
+
+.bio {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin-left: 50px;
+}
+.description {
+    font-size: 18px;
+    line-height: 1.8;
+    min-width: 600px;
+}
+.Interests {
+    display: flex;
+    margin-top: 10px;
+}
+
+.Interests button {
+    padding: 5px 10px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(236, 236, 236);
+    border: none;
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 8px;
+    margin-right: 8px;
+}
+
+.Interests button.Interest:hover {
+    background-color: rgb(235, 96, 96) !important;
+}
+
+.fa-minus {
+    font-size:14px;
+    margin-left: 5px;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+}
+.profile-pic img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 20% 0;
+    margin-right: 25px;
+}
+
+.sub-info {
+    display: flex;
+    justify-content: space-between;
+}
+.top-tips {
+    margin-right: 50px;
+}
+
+.meetups {
+    min-width: 600px;
+}
+
+.top-tip ol {
+    text-align: left;
+}
+.top-tips ol li{
+    font-size: 24px;
+    line-height: 1.8; 
+}
+input {
+    font-size:24px;
+    padding:10px 10px 10px 5px;
+    border:1px solid #dadada;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin-right: 5px;
+}
+
+input:focus{ outline:none; }
+
+/* Meetup */
+.meetup-item {
     position: relative;
-    width: 600px;
-    transform: translate(260px, -150px);
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 10px;
+    display: flex;
+    padding: 20px;
+    margin: 0 0 5px 0;
 }
 
-.Message {
-    width: 120px;
+.meetup-item .event {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.Favorite {
-    transform: translate(5px, 5px);
-    color: #ffff00;
+.meetup-title {
+    margin-bottom: 5px;
 }
 
-.TopTips {
-    float: left;
-    transform: translate(100px);
+.meetups .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(148, 148, 148);
 }
 
-.Meetups {
-    float: right;
+.details p, .description p, h2, p {
+    margin: 0;
 }
 
-.Meetup {
-    width: 500px;
-    border: 1px solid lightgray;
-    padding: 5px;
-    margin: 10px;
+#ListOfMeetups {
+    padding: 0;
 }
 
-.MeetupName {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.MeetupTime {
-    font-style: italic;
-}
-
-.MeetupLocation {
-    font-style: italic;
-}
-
-.NewTip {
-    cursor:pointer;
-}
-
-li.Tip {
-    cursor:pointer;    
-}

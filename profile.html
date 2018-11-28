@@ -20,8 +20,56 @@
     <div id="Navbar"></div>
   </head>
   <body>
-    <!-- @todo ProfilePic div is taking up too much space -->
-    <div class="ProfilePic">
+    <div class="container">
+      <div class='actions'>
+        <button class='message'>Message</button>
+        <svg class="star" width="40" height="40" viewBox="0 0 52 49" xmlns="http://www.w3.org/2000/svg">
+          <path d="M26 1.61804L31.5863 18.811L31.6986 19.1565H32.0619H50.1397L35.5144 29.7824L35.2205 29.9959L35.3328 30.3414L40.9191 47.5344L26.2939 36.9086L26 36.695L25.7061 36.9086L11.0809 47.5344L16.6672 30.3414L16.7795 29.9959L16.4856 29.7824L1.86032 19.1565H19.9381H20.3014L20.4137 18.811L26 1.61804Z" fill="white" stroke="#6B6B6B"/>
+        </svg>
+      </div>
+      <div class='main-info'>
+        <div class='profile-container'>
+            <div class='profile-pic'>
+              <img src='./images/sigh.JPG'/>
+            </div>
+            <div class='info'>
+              <div class='name'>
+                <h2 id="Name">Name</h2>
+                <div class='online-dot'></div>
+              </div>
+              <p id="School">Location</p>
+              <p id="Country">Major</p>
+              <p>Mentor</p>
+            </div>
+        </div>
+        
+        <div class='bio'>
+          <i class="far fa-edit EditBio" style="cursor:pointer"></i>
+          <div class='description' id='Description'>
+            Hey! I’m a 4th year English student here at UCLA. 
+            I love showing new students around and learning about new cultures! 
+            In my free time, I like to write short stories and cook vegetarian 
+            friendly meals.
+          </div>
+          <div class="EditBioBox"></div>
+          <div class='Interests'>
+          </div>
+        </div>
+      </div>
+      <div class='sub-info'>
+        <div class='top-tips'>
+          <h1>Top Tips <span class="AddTipPlaceholder"></span></h1>
+          <ol class="ListOfTips">
+          </ol>
+        </div>
+        <div class='meetups'>
+            <h1>Meetups</h1>
+            <ul id="ListOfMeetups">
+            </ul>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="ProfilePic">
         <img class="img-circle" style="width:175px; height:175px" src="images/kermit.png">
       <div class="ProfileInfo">
         <h3>
@@ -51,11 +99,11 @@
     <div class="Meetups">
       <h3>Meetups</h3>
       <ul id="ListOfMeetups"></ul>
-    </div>
+    </div> -->
 
     <!-- Bootstrap-->    
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     
     <!-- Font-awesome -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
