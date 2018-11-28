@@ -49,8 +49,6 @@ button:hover {
 }
 .signup button {
     border-radius: 12px;
-    width: 100px;
-    height: 50px;
     margin: 5px;
     background-color: gainsboro;
     border: none;
