@@ -2,49 +2,61 @@
 <html lang="en">
 
 <head>
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <!-- iBridge Common -->
+    <script src="./common.js"></script>
+    <script src="./signUp.js"></script>
+
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="signUp.css">
   <title>iBridge - SignUp</title>
+
 </head>
 
 <body>
-  <nav>iBridge</nav>
+    <nav><a href='./index.html'>iBridge</a></nav>
   <main>
     <h1>Sign Up</h1>
-      <form class='profileInfo'>
+      <div class='profileInfo'>
         <div class="grid-container">
         <img class='avatar' src="images/avatar_female.png" alt="Avatar">
         <div class='email'>
-          <input type="text" name="email" required placeholder="Email" />
-          <input type="text" name="password" required placeholder="Password" />
+          <input type="text" id="email" required placeholder="Email" />
+          <input type="text" id="password" required placeholder="Password" />
         </div>
         <div class="name">
-          <input type="text" name="name" required placeholder="Name:" />
+            <input type="text" id="firstname" required placeholder="First Name:" />
+            <input type="text" id="lastname" required placeholder="Last Name:" />
         </div>
         <div class="country">
-          <input type="text" name="nationality" required placeholder="I'm from: <country>" />
+          <input type="text" id="nationality" required placeholder="I'm from: <country>" />
         </div>
         <div class="role">
-          <input type="radio">Mentor</input>
-          <input type="radio">Mentee</input>
+          <input type="radio" name="role" value="Mentor">Mentor</input>
+          <input type="radio" name="role" value="Mentee">Mentee</input>
+        </div>
+        <div class="school">
+            <input type="text" id="school" required placeholder="School:" />
         </div>
         <div class="major">
-          <input type="text" name="major" required placeholder="Major:" />
-        </div>
-        <div class="hobby">
-          <input type="text" name="hobby" required placeholder="Hobbies:" />
+          <input type="text" id="major" required placeholder="Major:" />
         </div>
         <div class='bio'>
-          <textarea name="textarea" required rows="5" cols="30" placeholder="Bio"></textarea>
+          <textarea id="textarea" required rows="5" cols="30" placeholder="Bio"></textarea>
         </div>
-      </div>
+        </div>
+        <div class='signup'>
+            <button class='signup done'>Done</button>
+        </div>
+    </div>
+    </main>
 
-      </form>
-      <!-- Jump to where? edit link later -->
-      <div class='signup'>
-        <button><a href='index.html'>Done</a></button>
-      </div>
-  </main>
+
+
+    <div class='EmailError' hidden><p>Email already in use.</p></div>
+    <div class='FieldError' hidden><p>Fields cannot be empty.</p></div>
 </body>
-
 </html>

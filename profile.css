@@ -52,11 +52,12 @@ ul, li {
 }
 
 .TopTips {
-    transform: translate(100px, -250px);
+    float: left;
+    transform: translate(100px);
 }
 
 .Meetups {
-    transform: translate(400px, -140px);
+    float: right;
 }
 
 .Meetup {

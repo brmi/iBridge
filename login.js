@@ -1,13 +1,12 @@
-var Firestore = InitFirestore();
-
 $(document).ready(() => {    
     $("#SignIn").on("click", SignIn);
 });
 
 function SignIn() {
+    var Firestore = InitFirestore();
     const Email = $("#Email").val();
     const Password = $("#Password").val();
-
+    
     Firestore.collection("Accounts").where("email", "==", Email).where("password", "==", Password).get().then(function(Query){
         var bAuthenticated = false;
         

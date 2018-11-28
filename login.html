@@ -1,45 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="signUp.css">
-    <title>iBridge - Login</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="signUp.css">
+  <title>iBridge - Login</title>
 </head>
+
 <body>
-    <nav>iBridge</nav>
-    <div class='wrapper'>
-        <div class='title'>
+  <nav><a href='./index.html'>iBridge</a></nav>
+  <p class='center'></p>
+  <div class='signup'>
+    <form class='loginInfo'>
+      <input id="Email" type="text" name="email" required placeholder="Email:" />
+      <p></p>
+      <input id="Password" type="text" name="password" required placeholder="Password:" />
+    </form>
+  </div>
+  <div class="signup">
+    <button id="SignIn">Sign In</button>
+  </div>
 
 
-        </div>
+  <!-- Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-        <div class='signup'>
-            <h1>Welcome Back</h1>
-            <form class='loginInfo'>
-                <input id="Email" type="text" name="email" required
-                placeholder="Email:" />
-                <p></p>
-                <input id="Password" type="text" name="password" required
-                placeholder="Password:" />
-            </form>
-        </div>
-        <div class="signup">
-            <button id="SignIn">Sign In</button>
-        </div>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
 
-
-    </div>
-
-    <!-- Jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-
-    <!-- iBridge Common -->
-    <script src="./common.js"></script>
-
-    <script src="./login.js"></script>
-
+  <!-- iBridge Common -->
+  <script src="./common.js"></script>
+  <script src="./login.js"></script>
 </body>
+
 </html>
