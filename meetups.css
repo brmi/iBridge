@@ -33,7 +33,7 @@ button:hover {
     color: white;
     background-color: blue !important;
 }
-button.create, button.add-meetup, button.cancel-meetup {
+button.create, button.add-meetup, button.cancel-meetup, button.attend-meetup, button.do-not-attend-meetup {
     width: 100px;
     height: 50px;
     background-color: gainsboro;
