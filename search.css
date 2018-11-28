@@ -1,0 +1,15 @@
+.Search {
+    cursor: pointer;    
+}
+
+.Search:hover {
+    color: blue;
+}
+
+.Error p {
+    color: red;
+}
+
+.ListOfResults {
+    list-style-type: none;
+}
