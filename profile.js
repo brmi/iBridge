@@ -13,8 +13,8 @@ $(document).ready(() => {
             const Profile = Doc.data();
             let name = Profile.first + ' ' + Profile.last;
             $("#Name").text(name.toString());
-            $("#School").text(Profile.school);
-            $("#Country").text(Profile.country);
+            $("#School").html(`<i class="fas fa-university"></i>` + Profile.school);
+            $("#Country").html(`<i class="fas fa-flag"></i>` + Profile.country);
             $("#Description").text(Profile.bio);
         });
     });
@@ -78,7 +78,7 @@ $(document).ready(() => {
 
     Firestore.collection("Meetups").where("createdby", "==", ProfileID).get().then(function(Query){
         if (Query.empty) {
-            $("#ListOfMeetups").append("<li class='Meetup'><p class='MeetupName'>No Meetups</p><p class='MeetupDescription'>Visit the Meetups tab to create meetups!</p></li>");
+            $("#ListOfMeetups").append("<li class='Meetup'><p class='MeetupName'>You haven't created any meetups.</p><p class='MeetupDescription'>Visit the Meetups tab to create one!</p></li>");
         } else {
             Query.forEach(function(Doc){
                 const Meetup = Doc.data();
@@ -136,10 +136,8 @@ function AllowEditing(Firestore, MyID) {
 
     /* Edit bio */
     var IsEditingBio = false;
-
-    // $(".Bio").prepend('<i class="far fa-edit EditBio" style="cursor:pointer"></i>');
-
-    $(".EditBio").on("click", function(){
+    
+    $(document).on("click", ".EditBio", function(){
         if (IsEditingBio) {
             const EditBioBox = $("#EditBioBox");
             const NewBio = EditBioBox.val();
@@ -153,12 +151,13 @@ function AllowEditing(Firestore, MyID) {
             });
 
             EditBioBox.remove();
+            $(".fa-times-circle").replaceWith('<i class="far fa-edit EditBio" style="cursor:pointer"></i>');
 
             IsEditingBio = false;
         } else {
             const Description = $("#Description").text();
-            const EditBioBox = "<textarea rows='4' cols='50' id='EditBioBox'>" + Description + "</textarea>";
-
+            const EditBioBox = "<textarea class='description' rows='4' cols='50' id='EditBioBox'>" + Description + "</textarea>";
+            $(".fa-edit").replaceWith('<i class="far fa-times-circle EditBio" style="cursor:pointer"></i>');
             $(".EditBioBox").append(EditBioBox);
 
             $("#Description").text("");
@@ -184,7 +183,7 @@ function AllowEditing(Firestore, MyID) {
                 $("#EditSchool").remove();
                 $("#SaveSchool").remove();
                 if (NewSchool == "" || NewSchool == School) {
-                    $("#School").text(School);
+                    $("#School").html(`<i class="fas fa-university"></i>` + School);
                 } else {
                     $("#School").text(NewSchool);
                     Firestore.collection("Profiles").where("id", "==", MyID).get().then(function(Query){
@@ -213,7 +212,7 @@ function AllowEditing(Firestore, MyID) {
                 $("#EditCountry").remove();
                 $("#SaveCountry").remove();
                 if (NewCountry == "" || NewCountry == Country) {
-                    $("#Country").text(Country);
+                    $("#Country").html(`<i class="fas fa-flag">` + Country);
                 } else {
                     $("#Country").text(NewCountry);
                     Firestore.collection("Profiles").where("id", "==", MyID).get().then(function(Query){

@@ -4,6 +4,7 @@ html,body {
     height: 100%;
     margin: 0;
     font-family: 'Montserrat', Arial, sans-serif;
+    background-color: #faf9f7;
 }
 .container {
     padding-left: 100px;
@@ -14,30 +15,44 @@ html,body {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 50px;
+    border: 1px solid black;
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
+    padding: 40px 30px;
+    /* border-radius: 10px; */
+    background-color: #fff;
+}
+i {
+    color: #000000;
+    padding: 5px 5px 5px 0px;
 }
 .info p {
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.2;
+    color: rgb(148, 148, 148);
 }
 #Name {
-    font-size: 24px;
+    font-size: 28px;
     margin-right: 5px;
+    color: #000000;
 }
 .name {
     display: flex;
     align-items: center;
 }
-.online-dot {
+h2 {
+    display: inline; padding:0;margin:0
+}
+/* .online-dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background-color: #50C470;
-}
+} */
 
-.EditBio {
+/* .EditBio {
     margin-left: 5px;
-}
+} */
 .fa-plus {
     font-size: 24px;
 }
@@ -54,6 +69,7 @@ button:hover {
     color: white;
     background-color: blue !important;
 }
+
 button.message {
     width: 100px;
     height: 50px;
@@ -63,6 +79,9 @@ button.message {
     font-weight: 800;
     border-radius: 15px;
 }
+/* button.message:hover {
+    cursor: url(./images/chat.svg), pointer;
+} */
 
 button#CreateTip {
     width: 80px;
@@ -86,13 +105,13 @@ button#CreateTip {
 .bio {
     display: flex;
     flex-direction: column;
-    max-width: 800px;
+    /* max-width: 800px; */
     margin-left: 50px;
+    flex-basis: 60%;
 }
 .description {
     font-size: 18px;
     line-height: 1.8;
-    min-width: 600px;
 }
 .Interests {
     display: flex;
@@ -113,8 +132,17 @@ button#CreateTip {
     margin-right: 8px;
 }
 
+.InterestText {
+    position: relative;
+    bottom: 2px;
+}
+
 .Interests button.Interest:hover {
     background-color: rgb(235, 96, 96) !important;
+}
+
+button.Interest:hover i {
+    color: white;
 }
 
 .fa-minus {
@@ -125,13 +153,14 @@ button#CreateTip {
 .profile-container {
     display: flex;
     align-items: center;
+    flex-basis: 40%;
 }
 .profile-pic img {
     height: 200px;
     width: 200px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: 20% 0;
+    /* object-position: 20% 0; */
     margin-right: 25px;
 }
 
@@ -141,10 +170,16 @@ button#CreateTip {
 }
 .top-tips {
     margin-right: 50px;
+    background-color: #fff;
+    border: 1px solid black;
+    padding: 20px 40px;
 }
 
 .meetups {
     min-width: 600px;
+    background-color: #fff;
+    border: 1px solid black;
+    padding: 20px 40px;
 }
 
 .top-tip ol {
@@ -154,12 +189,15 @@ button#CreateTip {
     font-size: 24px;
     line-height: 1.8; 
 }
-input {
+input, textarea {
     font-size:24px;
     padding:10px 10px 10px 5px;
     border:1px solid #dadada;
     font-family: 'Montserrat', Arial, sans-serif;
     margin-right: 5px;
+}
+textarea {
+    width: 100%;
 }
 
 input:focus{ outline:none; }
@@ -198,5 +236,15 @@ input:focus{ outline:none; }
 
 #ListOfMeetups {
     padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.Meetup p {
+    line-height: 1.8;
+    font-size: 20px;
+    color: rgb(177, 177, 177);
 }
 
