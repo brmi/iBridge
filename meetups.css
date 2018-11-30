@@ -112,7 +112,7 @@ button.attend {
     position: absolute;
     top: 20vh;
     width: calc(100vw - 242px);
-    min-height: 40vh;
+    min-height: 45vh;
     z-index: 2;
     background-color:#faf9f7;
     border: 1px solid black;
@@ -125,14 +125,15 @@ button.attend {
 .create-meetup textarea {
     width: 80%;
     height: 20vh;
+    padding: 10px;
     font-size: 20px;
-    border: none;
+    border: 1px solid rgb(48, 48, 48);
 }
 
 .create-meetup input {
     margin-right: 10px;
-    border: none;
-    padding: 5px;
+    border: 1px solid rgb(48, 48, 48);
+    padding: 10px;
     font-size: 14px;
     font-family: 'Montserrat', Arial, sans-serif;
 }
@@ -143,7 +144,6 @@ button.attend {
 
 .details-meetup {
     display: flex;
-    width: 80%;
     justify-content: flex-start;
 }
 
@@ -158,3 +158,5 @@ button.attend {
 button.cancel-meetup:hover {
     background-color: rgb(235, 96, 96) !important;
 }
+
+  

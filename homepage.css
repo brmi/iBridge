@@ -4,6 +4,7 @@ html,body {
     height: 100%;
     margin: 0;
     font-family: 'Montserrat', Arial, sans-serif;
+    background: #faf9f7;
 }
 
 a {
@@ -19,7 +20,7 @@ a:hover {
     padding-right: 50px;
 }
 nav {
-    background: palevioletred;
+    background-color: #fff;
     height: 10vh;
     width: 100%;
     font-size: 32px;
@@ -34,9 +35,9 @@ h1,h2,p {
     margin: 0;
 }
 
-button:hover {
+button:hover, button:hover a {
     cursor: pointer;
-    color: white;
+    color: white !important;
     background-color: blue !important;
 }
 
@@ -44,15 +45,17 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 20vh;
+    height: 30vh;
     justify-content: center;
 }
 .signup button {
-    border-radius: 12px;
-    margin: 5px;
+    width: 100px;
+    height: 50px;
     background-color: gainsboro;
     border: none;
     font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 10px;
 }
 
 /* SLIDER */
