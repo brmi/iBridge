@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="signUp.css">
-    <title>iBridge - Login</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="signUp.css">
+  <title>iBridge - Login</title>
 </head>
  <body>
-    <nav><a href='./index.html'>iBridge</a></nav>
-    <main>
-        <p class='center'></p>
-        <div class='flex'>
-            <div class='signup'>
-                <form class='loginInfo'>
-                    <div><input id="Email" type="text" name="email" required placeholder="Email" /></div>
-                    <div><input type="password" id="Password" name="password" required placeholder="Password" /></div>
-                     <!-- <div class='signup'> -->
-                    <button id="SignIn">Sign In</button>
-                    <!-- </div> -->
-                </form>
-            </div>
-        </div>
-    </main>
-     <!-- Jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-     <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-     <!-- iBridge Common -->
-    <script src="./common.js"></script>
-    <script src="./login.js"></script>
+  <nav><a href='./index.html'>iBridge</a></nav>
+  <p class='center'></p>
+  <div class='signup'>
+    <form class='loginInfo'>
+      <div><input id="Email" type="text" name="email" required placeholder="Email" /></div>
+      <div><input type="password" id="Password" name="password" required placeholder="Password" /></div>
+    </form>
+    <div class='signup'>
+      <button id="SignIn" class='signup done'>Sign In</button>
+     </div>
+  </div>
+   <!-- Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+   <!-- iBridge Common -->
+  <script src="./common.js"></script>
+  <script src="./login.js"></script>
 </body>
  </html>
-
-</html>
