@@ -16,13 +16,13 @@
 }
 
 /* Change the color of links on hover */
-.Navbar a:hover {
-    background-color: rgb(0, 0, 0);
-    color: #fff;
+.Navbar a:hover, .Navbar a.active:hover {
+    background-color: rgb(0, 0, 0) !important;
+    color: #fff !important;
 }
 
 /* Add a color to the active/current link */
 .Navbar a.active {
-    background-color: palevioletred;
-    color: #faf9f7;
+    background-color: #faf9f7;
+    color: #000;
 }
