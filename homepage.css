@@ -64,7 +64,7 @@ button:hover, button:hover a {
 /* SLIDER */
 div#slider {
      overflow: hidden; 
-     height: 70vh;
+     height: 50vh;
 }
 div#slider figure img { width: 20%; float: left; }
 div#slider figure { 
