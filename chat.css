@@ -56,7 +56,7 @@ body {
   padding: 10px 0 10px 46px;
   width: calc(100% - 25px);
   border: none;
-  background: palevioletred;
+  background: #32465a;
   color: #f5f5f5;
 }
 
@@ -68,14 +68,14 @@ body {
 }
 
 #frame #sidepanel #contacts ul li.contact:hover {
-  background: palevioletred;
+  background: #32465a;
 }
 #frame #sidepanel #contacts ul li.contact.active {
-  background: palevioletred;
+  background: #32465a;
   border-right: 5px solid #435f7a;
 }
 #frame #sidepanel #contacts ul li.contact.active span.contact-status {
-  border: 2px solid palevioletred !important;
+  border: 2px solid #32465a !important;
 }
 #frame #sidepanel #contacts ul li.contact .wrap {
   width: 88%;
@@ -204,7 +204,7 @@ body {
   margin: 6px 8px 0 0;
 }
 #frame .content .messages ul li.sent p {
-  background: palevioletred;
+  background: #435f7a;
   color: #f5f5f5;
 }
 #frame .content .messages ul li.replies img {
@@ -247,7 +247,7 @@ body {
   width: calc(100% - 90px);
   padding: 11px 32px 10px 8px;
   font-size: 0.8em;
-  color: palevioletred;
+  color: #32465a;
 }
 @media screen and (max-width: 735px) {
   #frame .content .message-input .wrap input {
@@ -264,7 +264,7 @@ body {
   width: 50px;
   padding: 12px 0;
   cursor: pointer;
-  background: palevioletred;
+  background: #32465a;
   color: #f5f5f5;
 }
 @media screen and (max-width: 735px) {
@@ -273,7 +273,7 @@ body {
   }
 }
 #frame .content .message-input .wrap button:hover {
-  background: palevioletred;
+  background: #435f7a;
 }
 #frame .content .message-input .wrap button:focus {
   outline: none;
