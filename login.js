@@ -13,7 +13,7 @@ function SignIn() {
         Query.forEach(function(Doc){
             const UserID = Doc.data().id;
             SetCookie("auth", UserID, 0.1);
-            window.location.href = "http://localhost:8000/profile.html?id=" + UserID;
+            window.location.href = "https://brmi.github.io/iBridge/profile.html?id=" + UserID;
             bAuthenticated = true;
         });
 

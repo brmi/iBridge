@@ -57,7 +57,7 @@ $(document).ready(() => {
 
                 Promise.all([Step1, Step2]).then(function(Values){
                     SetCookie("auth", NewAccountID, 0.1);
-                    window.location.href = "http://localhost:8000/profile.html?id=" + NewAccountID;
+                    window.location.href = "https://brmi.github.io/iBridge/profile.html?id=" + NewAccountID;
                 });
             }
         });
