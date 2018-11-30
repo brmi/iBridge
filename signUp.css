@@ -185,17 +185,18 @@ p.center {
 }
 
 loginInfo {
-  display: none;
   position: none;
   top: 20vh;
   width: calc(100vw - 100px);
   min-height: 40vh;
   z-index: 2;
   background-color: papayawhip;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   padding: 20px;
+
 }
 
 .loginInfo input {
