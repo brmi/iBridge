@@ -4,11 +4,13 @@ html,body {
     height: 100%;
     margin: 0;
     font-family: 'Montserrat', Arial, sans-serif;
+    background-color: #faf9f7;
 }
 
 .wrapper {
     padding-left: 100px;
     padding-right: 100px;
+    width: calc(100vw - 200px);
 }
 
 nav {
@@ -42,6 +44,10 @@ button.create, button.add-meetup, button.cancel-meetup, button.attend-meetup, bu
     font-weight: 800;
 }
 
+button.do-not-attend-meetup:hover {
+    background-color:  rgb(235, 96, 96) !important;
+}
+
 button.attend {
     background-color: gainsboro;
     border: none;
@@ -73,12 +79,13 @@ button.attend {
 }
 .meetup-item {
     position: relative;
-    border: 1px solid rgb(231, 231, 231);
-    border-radius: 10px;
+    border: 1px solid black;
+    /* border-radius: 10px; */
     min-height: 100px;
     display: flex;
     padding: 20px;
     margin: 0 0 30px 0;
+    background-color: #fff;
 }
 
 .meetup-item .event {
@@ -104,10 +111,11 @@ button.attend {
     display: none;
     position: absolute;
     top: 20vh;
-    width: calc(100vw - 100px);
+    width: calc(100vw - 242px);
     min-height: 40vh;
     z-index: 2;
-    background-color:papayawhip;
+    background-color:#faf9f7;
+    border: 1px solid black;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -126,6 +134,11 @@ button.attend {
     border: none;
     padding: 5px;
     font-size: 14px;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+#in-title{
+    font-weight: 800;
 }
 
 .details-meetup {
@@ -140,4 +153,8 @@ button.attend {
 
 .buttons button {
     margin-right: 10px;
+}
+
+button.cancel-meetup:hover {
+    background-color: rgb(235, 96, 96) !important;
 }
