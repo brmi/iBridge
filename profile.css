@@ -22,7 +22,7 @@ html,body {
     background-color: #fff;
 }
 i {
-    color: #000000;
+    color: rgb(148, 148, 148);
     padding: 5px 5px 5px 0px;
 }
 .info p {
@@ -42,6 +42,10 @@ i {
 }
 h2 {
     display: inline; padding:0;margin:0
+}
+
+input.editing {
+    font-size: 14px;
 }
 /* .online-dot {
     width: 10px;

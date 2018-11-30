@@ -13,6 +13,8 @@ $(document).ready(() => {
             const Profile = Doc.data();
             let name = Profile.first + ' ' + Profile.last;
             $("#Name").text(name.toString());
+            $("#Major").html(`<i class="fas fa-book"></i>`+Profile.major);
+            $("#UserType").html(`<i class="fas fa-smile"></i>` + Profile.usertype);
             $("#School").html(`<i class="fas fa-university"></i>` + Profile.school);
             $("#Country").html(`<i class="fas fa-flag"></i>` + Profile.country);
             $("#Description").text(Profile.bio);
@@ -177,7 +179,7 @@ function AllowEditing(Firestore, MyID) {
             const School = $(this).text();
             $(this).text("");
             $("<button id='SaveSchool'>Save</button>").insertAfter(this);
-            $("<input type='text' id='EditSchool' value='" + School + "'>").insertAfter(this);
+            $("<input class='editing' type='text' id='EditSchool' value='" + School + "'>").insertAfter(this);
             $("#SaveSchool").on("click", function(){
                 const NewSchool = $("#EditSchool").val();
                 $("#EditSchool").remove();
@@ -206,15 +208,15 @@ function AllowEditing(Firestore, MyID) {
             const Country = $(this).text();
             $(this).text("");
             $("<button id='SaveCountry'>Save</button>").insertAfter(this);
-            $("<input type='text' id='EditCountry' value='" + Country + "'>").insertAfter(this);
+            $("<input class='editing' type='text' id='EditCountry' value='" + Country + "'>").insertAfter(this);
             $("#SaveCountry").on("click", function(){
                 const NewCountry = $("#EditCountry").val();
                 $("#EditCountry").remove();
                 $("#SaveCountry").remove();
                 if (NewCountry == "" || NewCountry == Country) {
-                    $("#Country").html(`<i class="fas fa-flag">` + Country);
+                    $("#Country").html(`<i class="fas fa-flag"></i>` + Country);
                 } else {
-                    $("#Country").text(NewCountry);
+                    $("#Country").html(`<i class="fas fa-flag"></i>` + NewCountry);
                     Firestore.collection("Profiles").where("id", "==", MyID).get().then(function(Query){
                         Query.forEach(function(Doc){
                             Doc.ref.update({country: NewCountry});
@@ -224,6 +226,62 @@ function AllowEditing(Firestore, MyID) {
                 IsEditingCountry = false;
             });
             IsEditingCountry = true;
+        }
+    });
+
+    var IsEditingMajor = false;
+
+    $("#Major").on("click", function(){
+        if (!IsEditingMajor) {
+            const Major = $(this).text();
+            $(this).text("");
+            $("<button id='SaveMajor'>Save</button>").insertAfter(this);
+            $("<input class='editing' type='text' id='EditMajor' value='" + Major + "'>").insertAfter(this);
+            $("#SaveMajor").on("click", function(){
+                const NewMajor = $("#EditMajor").val();
+                $("#EditMajor").remove();
+                $("#SaveMajor").remove();
+                if (NewMajor == "" || NewMajor == Major) {
+                    $("#Major").html(`<i class="fas fa-book"></i>` + Major);
+                } else {
+                    $("#Major").html(`<i class="fas fa-book"></i>` + NewMajor);
+                    Firestore.collection("Profiles").where("id", "==", MyID).get().then(function(Query){
+                        Query.forEach(function(Doc){
+                            Doc.ref.update({major: NewMajor});
+                        });
+                    });
+                }
+                IsEditingMajor = false;
+            });
+            IsEditingMajor = true;
+        }
+    });
+
+    var IsEditingUserType = false;
+
+    $("#UserType").on("click", function(){
+        if (!IsEditingUserType) {
+            const UserType = $(this).text();
+            $(this).text("");
+            $("<button id='SaveUserType'>Save</button>").insertAfter(this);
+            $("<input class='editing' type='text' id='EditUserType' value='" + UserType + "'>").insertAfter(this);
+            $("#SaveUserType").on("click", function(){
+                const NewUserType = $("#EditUserType").val();
+                $("#EditUserType").remove();
+                $("#SaveUserType").remove();
+                if (NewUserType == "" || NewUserType == UserType) {
+                    $("#UserType").html(`<i class="fas fa-book"></i>` + UserType);
+                } else {
+                    $("#UserType").html(`<i class="fas fa-book"></i>` + NewUserType);
+                    Firestore.collection("Profiles").where("id", "==", MyID).get().then(function(Query){
+                        Query.forEach(function(Doc){
+                            Doc.ref.update({usertype: NewUserType});
+                        });
+                    });
+                }
+                IsEditingUserType = false;
+            });
+            IsEditingUserType = true;
         }
     });
 }
