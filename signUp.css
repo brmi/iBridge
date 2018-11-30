@@ -196,8 +196,11 @@ loginInfo {
 
 .loginInfo input {
   border: 0;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid grey;
   outline: 0;
+  margin: 10px;
+  font-size: 14px;
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 a {
