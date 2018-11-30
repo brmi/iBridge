@@ -7,14 +7,6 @@ html,body {
     background: #faf9f7;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
-a:hover {
-    color: white;
-}
-
 .wrapper {
     padding-left: 50px;
     padding-right: 50px;
