@@ -8,8 +8,7 @@ html,body {
 }
 
 .wrapper {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 50px;
 }
 nav {
     background-color: palevioletred;
