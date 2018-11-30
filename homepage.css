@@ -7,10 +7,14 @@ html,body {
     background: #faf9f7;
 }
 
-a:link, a:hover {
-    text-decoration: none;
-    color: initial;
-}
+a {
+     text-decoration: none;
+     color: black;
+ }
+ a:hover {
+     color: white;
+ }
+
 
 .wrapper {
     padding: 50px;
