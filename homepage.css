@@ -34,7 +34,7 @@ h1,h2,p {
 button:hover, button:hover a {
     cursor: pointer;
     color: white !important;
-    background-color: blue !important;
+    background-color: palevioletred !important;
 }
 
 .signup {
