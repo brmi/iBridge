@@ -23,6 +23,6 @@
 
 /* Add a color to the active/current link */
 .Navbar a.active {
-    background-color: #faf9f7;
-    color: #000;
+    background-color: palevioletred;
+    color: #faf9f7;
 }
