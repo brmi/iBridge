@@ -20,10 +20,10 @@ a:hover {
     padding-right: 50px;
 }
 nav {
-    background-color: #fff;
+    background-color: white;
     height: 10vh;
     width: 100%;
-    font-size: 42px;
+    font-size: 32px;
     font-weight: 800;
     display: flex;
     align-items: center;
@@ -45,7 +45,7 @@ button:hover, button:hover a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 30vh;
+    height: 20vh;
     justify-content: center;
 }
 .signup button {
@@ -61,7 +61,7 @@ button:hover, button:hover a {
 /* SLIDER */
 div#slider {
      overflow: hidden; 
-     height: 50vh;
+     height: 70vh;
 }
 div#slider figure img { width: 20%; float: left; }
 div#slider figure { 
