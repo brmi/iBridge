@@ -22,14 +22,14 @@ html,body {
     background-color: #fff;
 }
 i {
-    color: rgb(148, 148, 148);
+    color: rgb(0, 0, 0);
     padding: 5px 5px 5px 0px;
 }
 .info p {
     font-weight: 500;
     font-size: 18px;
     line-height: 1.2;
-    color: rgb(148, 148, 148);
+    color: rgb(0, 0, 0);
 }
 #Name {
     font-size: 28px;
