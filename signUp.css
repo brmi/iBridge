@@ -4,13 +4,14 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: 'Montserrat', Arial, sans-serif;
+  background-color: #faf9f7;
 }
 
 nav {
-  background: palevioletred;
+  background: #fff;
   height: 10vh;
   width: 100%;
-  font-size: 32px;
+  font-size: 42px;
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -25,7 +26,6 @@ main {
 h1 {
   position: relative;
   left: 17%;
-  /* border: 3px solid #73AD21; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,13 +53,36 @@ p.center {
 }
 
 .avatar {
-  border-radius: 50%;
-  width: 70px;
+  /* border-radius: 50%; */
+  /* width: 100px; */
+  margin: 0 auto;
   justify-content: flex-start;
   grid-column: col / span 1;
   grid-row: row / span 1;
 }
 
+.profile-pic {
+  position: relative;
+  grid-column: col / span 1;
+  grid-row: row / span 1;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: gainsboro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic img {
+  height: 40px;
+  width: 40px;
+  object-fit: fill;
+}
+.profile-pic:hover {
+  cursor: pointer;
+}
 .email {
   grid-column: col 2 / span 1;
   grid-row: row 1/span 2;
@@ -106,7 +129,8 @@ p.center {
   position: relative;
   /* top: 1vh; */
   width: 800px;
-  padding: 0% 0 0;
+  /* padding: 0% 0 0; */
+  padding: 30px;
   margin: auto;
   /* min-height: 40vh; */
   z-index: 2;
@@ -120,13 +144,18 @@ p.center {
   border: 0;
   border-bottom: 1px solid grey;
   outline: 0;
+  margin: 10px;
+  font-size: 14px;
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .profileInfo textarea {
   margin: 10px;
-  width: 80%;
+  width: calc(97% - 20px);
   /* height: 20vh; */
+  resize: none;
   font-size: 20px;
+  padding: 10px;
 }
 
 .accountInfo {
