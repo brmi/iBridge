@@ -8,7 +8,7 @@ html, body {
 }
 
 nav {
-  background: #fff;
+  background: palevioletred;
   height: 10vh;
   width: 100%;
   font-size: 42px;
@@ -16,6 +16,10 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+nav a {
+  color: #fff;
 }
 
 main {

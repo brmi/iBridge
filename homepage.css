@@ -20,7 +20,7 @@ a:hover {
     padding-right: 50px;
 }
 nav {
-    background-color: white;
+    background-color: palevioletred;
     height: 10vh;
     width: 100%;
     font-size: 42px;
@@ -28,6 +28,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #fff;
 }
 
 nav a:hover {
