@@ -7,9 +7,15 @@ html,body {
     background: #faf9f7;
 }
 
+a {
+    text-decoration: none;
+    color: initial;
+}
+
 .wrapper {
     padding: 50px;
 }
+
 nav {
     background-color: palevioletred;
     height: 10vh;
