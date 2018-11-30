@@ -126,8 +126,8 @@ $(document).ready(() => {
 function ShowProfile(Profile, CommonInterests) {
     // @todo-anav
 
-    var ProfileHtml = `<li class='Interests'><a href='./profile.html?id=` + Profile.id + `'>` + Profile.first + ` ` + Profile.last + ` </a><br>
-    <span class='Major'>Major: ` + Profile.major + `</span>`;
+    var ProfileHtml = `<li class='Interests'><a class='name' href='./profile.html?id=` + Profile.id + `'>` + Profile.first + ` ` + Profile.last + ` </a><br>
+    <span class='Major'> Major: ` + Profile.major + `</span>`;
 
     if (CommonInterests) {
         CommonInterests.forEach(function(Interest){

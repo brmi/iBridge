@@ -17,3 +17,7 @@ a:hover {
 .ListOfResults {
     list-style-type: none;
 }
+
+a.name {
+    font-weight: 800;
+}
