@@ -204,7 +204,7 @@ body {
   margin: 6px 8px 0 0;
 }
 #frame .content .messages ul li.sent p {
-  background: #435f7a;
+  background: palevioletred;
   color: #f5f5f5;
 }
 #frame .content .messages ul li.replies img {
@@ -264,7 +264,7 @@ body {
   width: 50px;
   padding: 12px 0;
   cursor: pointer;
-  background: #32465a;
+  background: palevioletred;
   color: #f5f5f5;
 }
 @media screen and (max-width: 735px) {
@@ -273,7 +273,7 @@ body {
   }
 }
 #frame .content .message-input .wrap button:hover {
-  background: #435f7a;
+  background: palevioletred;
 }
 #frame .content .message-input .wrap button:focus {
   outline: none;
