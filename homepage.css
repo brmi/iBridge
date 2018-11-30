@@ -7,7 +7,7 @@ html,body {
     background: #faf9f7;
 }
 
-a {
+a:link, a:hover {
     text-decoration: none;
     color: initial;
 }
