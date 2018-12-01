@@ -6,6 +6,13 @@ html,body {
     font-family: 'Montserrat', Arial, sans-serif;
     background-color: #faf9f7;
 }
+a {
+     text-decoration: none;
+     color: black;
+ }
+ a:hover {
+     color: white;
+ }
 .container {
     padding-left: 100px;
     padding-right: 100px;
