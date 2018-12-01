@@ -43,7 +43,7 @@ h1,h2,p {
 button:hover, button:hover a {
     cursor: pointer;
     color: white !important;
-    background-color: blue !important;
+    background-color: rgb(214, 48, 103) !important;
 }
 
 .signup {
@@ -61,6 +61,7 @@ button:hover, button:hover a {
     font-size: 14px;
     font-weight: 800;
     margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 /* SLIDER */

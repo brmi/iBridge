@@ -170,11 +170,11 @@ p.center {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 10vh;
+  /* height: 10vh; */
   justify-content: center;
 }
 
-.signup button {
+.signup button, #SignIn {
   width: 100px;
   height: 50px;
   margin: 5px;
@@ -182,6 +182,7 @@ p.center {
   border: none;
   font-size: 14px;
   font-weight: 800;
+  border-radius: 10px;
 }
 
 loginInfo {
@@ -227,8 +228,8 @@ h1, h2, p {
 
 button:hover {
   cursor: pointer;
-  color: white;
-  background-color: blue !important;
+  color: white !important;
+  background-color: rgb(214, 48, 103) !important;
 }
 
 .EmailError, .FieldError {
