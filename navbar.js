@@ -1,5 +1,11 @@
 $(document).ready(() => {
-    var Firestore = InitFirestore();
+    if (!firebase.apps.length) {
+        console.log('not initialized navbar');
+        var Firestore = InitFirestore();
+     } else {
+        console.log('already initialized navbar');
+         var Firestore = getFirebase();
+    }
     const UserID = parseInt(GetCookie("auth"));
 
     // @todo Ideally the cookie also tracks username

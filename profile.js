@@ -1,5 +1,9 @@
 $(document).ready(() => {
-    var Firestore = InitFirestore();
+    if (!firebase.apps.length) {
+        var Firestore = InitFirestore();
+     } else {
+         var Firestore = getFirebase();
+    }
     const ProfileID = parseInt(GetParam("id"));
     const MyID = parseInt(GetCookie("auth"));
     var bAllowEditing = false;

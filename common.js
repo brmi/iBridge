@@ -16,6 +16,14 @@ function InitFirestore() {
     return Firestore;
 }
 
+function getFirebase() {
+    var Firestore = firebase.firestore();
+    const Settings = { timestampsInSnapshots: true };
+    Firestore.settings(Settings);
+
+    return Firestore;
+}
+
 function GetParam(Name) {
     var Results = new RegExp('[\?&]' + Name + '=([^&#]*)').exec(window.location.href);
     return Results == null ? null : decodeURI(Results[1]) || 0;
