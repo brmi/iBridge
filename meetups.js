@@ -1,7 +1,11 @@
-var Firestore = InitFirestore();
+// var Firestore = InitFirestore();
 
 $(document).ready(function() {
-    
+    if (!firebase.apps.length) {
+        var Firestore = InitFirestore();
+     } else {
+         var Firestore = getFirebase();
+    }
     const MyID = parseInt(GetCookie("auth"));
     var MaxMeetupID = 0;
     let firstname = 'NO FIRSTNAME';
