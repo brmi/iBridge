@@ -72,14 +72,18 @@ $(document).ready(() => {
     });
 
     Firestore.collection("Tips").where("id", "==", ProfileID).get().then(function(Query){
-        Query.forEach(function(Doc){
-            const Tip = Doc.data();
-            if (bAllowEditing) {
-                AddEditableTip(Firestore, MyID, Tip.tip);
-            } else {
-                $(".ListOfTips").append("<li>" + Tip.tip + "</li>");
-            }
-        });
+        if (Query.empty) {
+            $(".top-tips").append("<p class='no-tips'>You haven't created any tips yet.</p>");
+        } else {
+            Query.forEach(function(Doc){
+                const Tip = Doc.data();
+                if (bAllowEditing) {
+                    AddEditableTip(Firestore, MyID, Tip.tip);
+                } else {
+                    $(".ListOfTips").append("<li>" + Tip.tip + "</li>");
+                }
+            });
+        }
     });
 
     Firestore.collection("Meetups").where("createdby", "==", ProfileID).get().then(function(Query){
@@ -136,6 +140,7 @@ function AllowEditing(Firestore, MyID) {
                     AddEditableTip(Firestore, MyID, Tip);
                     $("#TipInput").remove();
                 }
+                $('.no-tips').remove();
             });
         }
     });
@@ -301,12 +306,10 @@ function TipAlreadyExists(Tip) {
 }
 
 function AddEditableTip(Firestore, MyID, Tip) {
-    const HTML = "<li><span class='Tip'>" + Tip + "</span></li>";
+    const HTML = "<li><span class='Tip'>" + Tip + "<i class='fas fa-trash RemoveTip' aria-hidden='true' style='cursor:pointer;'></i></span></li>";
     $(".ListOfTips").append(HTML);
     $(".Tip").hover(function(Event){
-        $(".RemoveTip").remove();
         if (Event.type == "mouseenter") {
-            $(this).append("<i class='fas fa-trash RemoveTip' aria-hidden='true' style='cursor:pointer;'></i>");
             $(".RemoveTip").on("click", function(){
                 const Text = $(this).closest("span").text();
                 Firestore.collection("Tips").where("id", "==", MyID).where("tip","==",Text).get().then(function(Query){
@@ -315,6 +318,10 @@ function AddEditableTip(Firestore, MyID, Tip) {
                     });
                 });
                 $(this).closest("li").remove();
+                // Check to see if tips are empty
+                if ($('.ListOfTips li').length == 0 && $('.top-tips p').length == 0) {
+                    $(".top-tips").append("<p class='no-tips'>You haven't created any tips yet.</p>");
+                }
             });
         }
     });

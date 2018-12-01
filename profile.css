@@ -68,6 +68,18 @@ input.editing {
     font-size: 24px;
 }
 
+.fa-trash {
+    margin-left: 2px;
+}
+
+.fa-trash {
+    visibility: hidden;
+}
+
+.top-tips ol li:hover .fa-trash{
+    visibility: visible;
+}
+
 .actions {
     display: flex;
     justify-content: flex-end;
@@ -184,6 +196,7 @@ button.Interest:hover i {
     background-color: #fff;
     border: 1px solid black;
     padding: 20px 40px;
+    min-width: 400px;
 }
 
 .meetups {
@@ -193,12 +206,13 @@ button.Interest:hover i {
     padding: 20px 40px;
 }
 
-.top-tip ol {
+.top-tips ol {
     text-align: left;
 }
 .top-tips ol li{
     font-size: 24px;
-    line-height: 1.8; 
+    line-height: 1.8;
+    /* display: flex; */
 }
 input, textarea {
     font-size:24px;
@@ -253,7 +267,7 @@ ul {
     list-style-type: none;
 }
 
-.Meetup p {
+.Meetup p, .no-tips {
     line-height: 1.8;
     font-size: 20px;
     color: rgb(177, 177, 177);
