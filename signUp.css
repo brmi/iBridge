@@ -1,117 +1,97 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800,900');
 
 html, body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Montserrat', Arial, sans-serif;
-    background-color: #faf9f7;
+  height: 100%;
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background-color: #faf9f7;
 }
 
 nav {
-    background: palevioletred;
-    height: 10vh;
-    width: 100%;
-    font-size: 42px;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: palevioletred;
+  height: 10vh;
+  width: 100%;
+  font-size: 42px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 nav a {
-    color: #fff;
-}
-
-nav a:hover {
-    color: blue;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    color: white;
+  color: #fff;
 }
 
 main {
-    padding-left: 50px;
-    padding-right: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 h1 {
-    position: relative;
-    left: 17%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-    margin: 0;
-}
-
-p {
-    margin: 0;
+  position: relative;
+  left: 17%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
 }
 
 p.center {
-    position: relative;
-    left: 30%;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
+  position: relative;
+  left: 30%;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
 }
 
 .grid-container {
-    display: grid;
-    /* grid-gap: auto; */
-    padding: 0px;
-    /* grid-template-columns: [col] auto [col] auto [col] auto [col] auto;
+  display: grid;
+  /* grid-gap: auto; */
+  padding: 0px;
+  /* grid-template-columns: [col] auto [col] auto [col] auto [col] auto;
   grid-template-rows: [row] auto [row] auto [row] ; */
 }
 
 .grid-container>div {
-    /* padding:20px 0; */
+  /* padding:20px 0; */
 }
 
 .avatar {
-    /* border-radius: 50%; */
-    /* width: 100px; */
-    margin: 0 auto;
-    justify-content: flex-start;
-    grid-column: col / span 1;
-    grid-row: row / span 1;
+  /* border-radius: 50%; */
+  /* width: 100px; */
+  margin: 0 auto;
+  justify-content: flex-start;
+  grid-column: col / span 1;
+  grid-row: row / span 1;
 }
 
 .profile-pic {
-    position: relative;
-    grid-column: col / span 1;
-    grid-row: row / span 1;
-    margin: 0 auto;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: gainsboro;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  grid-column: col / span 1;
+  grid-row: row / span 1;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: gainsboro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-pic img {
-    height: 40px;
-    width: 40px;
-    object-fit: fill;
+  height: 40px;
+  width: 40px;
+  object-fit: fill;
 }
-
 .profile-pic:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
-
 .email {
-    grid-column: col 2 / span 1;
-    grid-row: row 1/span 2;
-    display: flex;
-    flex-direction: column;
+  grid-column: col 2 / span 1;
+  grid-row: row 1/span 2;
+  display: flex;
+  flex-direction: column;
 }
 
 /*
@@ -120,130 +100,139 @@ p.center {
   grid-row: row 2;
 } */
 .name {
-    grid-column: col / span 6;
-    grid-row: row 3;
+  grid-column: col / span 6;
+  grid-row: row 3;
 }
 
 .country {
-    grid-column: col / span 6;
-    grid-row: row 4;
+  grid-column: col / span 6;
+  grid-row: row 4;
 }
 
 .role {
-    grid-column: col / span 4;
-    grid-row: row 5;
+  grid-column: col / span 4;
+  grid-row: row 5;
 }
 
 .school {
-    grid-column: col / span 4;
-    grid-row: row 6;
+  grid-column: col / span 4;
+  grid-row: row 6;
 }
 
 .major {
-    grid-column: col / span 4;
-    grid-row: row 7;
+  grid-column: col / span 4;
+  grid-row: row 7;
 }
 
 .bio {
-    grid-column: col 4 / span 3;
-    grid-row: row / span 4;
+  grid-column: col 4 / span 3;
+  grid-row: row / span 4;
 }
 
 .profileInfo {
-    position: relative;
-    width: 800px;
-    padding: 30px;
-    margin: auto;
-    z-index: 2;
-    background-color: white;
-    justify-content: space-around;
-    align-items: center;
+  position: relative;
+  /* top: 1vh; */
+  width: 800px;
+  /* padding: 0% 0 0; */
+  padding: 30px;
+  margin: auto;
+  /* min-height: 40vh; */
+  z-index: 2;
+  background-color: white;
+  /* flex-direction: row; */
+  justify-content: space-around;
+  align-items: center;
 }
 
 .profileInfo input {
-    border: 0;
-    border-bottom: 1px solid grey;
-    outline: 0;
-    margin: 10px;
-    font-size: 14px;
-    font-family: 'Montserrat', Arial, sans-serif;
+  border: 0;
+  border-bottom: 1px solid grey;
+  outline: 0;
+  margin: 10px;
+  font-size: 14px;
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .profileInfo textarea {
-    margin: 10px;
-    width: calc(97% - 20px);
-    /* height: 20vh; */
-    resize: none;
-    font-size: 20px;
-    padding: 10px;
+  margin: 10px;
+  width: calc(97% - 20px);
+  /* height: 20vh; */
+  resize: none;
+  font-size: 20px;
+  padding: 10px;
 }
 
 .accountInfo {
-    justify-content: flex-end;
-}
-
-.flex {
-    display: flex;
-    flex-direction: column;
-}
-
-button:hover, button:hover a {
-    cursor: pointer;
-    color: white !important;
-    background-color: palevioletred !important;
+  justify-content: flex-end;
 }
 
 .signup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 20vh;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: 10vh; */
+  justify-content: center;
 }
 
-.signup button {
-    width: 100px;
-    height: 50px;
-    background-color: gainsboro;
-    border: none;
-    font-size: 14px;
-    font-weight: 800;
-    margin-bottom: 10px;
-    border-radius: 12px;
+.signup button, #SignIn {
+  width: 100px;
+  height: 50px;
+  margin: 5px;
+  background-color: gainsboro;
+  border: none;
+  font-size: 14px;
+  font-weight: 800;
+  border-radius: 10px;
 }
 
 loginInfo {
-    position: none;
-    top: 20vh;
-    width: calc(100vw - 100px);
-    min-height: 40vh;
-    z-index: 2;
-    background-color: papayawhip;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
+  position: none;
+  top: 20vh;
+  width: calc(100vw - 100px);
+  min-height: 40vh;
+  z-index: 2;
+  background-color: papayawhip;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+
 }
 
 .loginInfo input {
-    border: 0;
-    border-bottom: 1px solid grey;
-    outline: 0;
-    margin: 10px;
-    font-size: 14px;
-    padding: 5px;
-    font-family: 'Montserrat', Arial, sans-serif;
+  border: 0;
+  border-bottom: 1px solid grey;
+  outline: 0;
+  margin: 10px;
+  font-size: 14px;
+  padding: 5px;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+nav a:hover {
+  color: blue;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: white;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+button:hover {
+  cursor: pointer;
+  color: white !important;
+  background-color: rgb(214, 48, 103) !important;
 }
 
 .EmailError, .FieldError {
-    text-align: center;
-    color: red;
-}
-
-#SignIn{
-    margin: 5px;
-    padding: 10px;
-    margin: 0 auto;
-       display: block;
+  text-align: center;
+  color: red;
 }
