@@ -2,7 +2,7 @@ $(document).ready(() => {
     if (!firebase.apps.length) {
         var Firestore = InitFirestore();
      } else {
-         var Firestore = getFirebase();
+        var Firestore = getFirebase();
     }
     const UserID = parseInt(GetCookie("auth"));
 
@@ -11,11 +11,12 @@ $(document).ready(() => {
         Query.forEach(function(Doc){
             const Profile = Doc.data();
             const ProfileURL = "profile.html?id=" + UserID;
-            const MeetupURL = "meetups.html";
+            // const MeetupURL = "meetups.html";
             // const ProfileURL = "https://brmi.github.io/iBridge/profile.html?id=" + UserID;
             // const MeetupURL = "https://brmi.github.io/iBridge/meetups.html";
-            $(".Navbar").prepend("<a href='" + MeetupURL + "'>Meetups</a>");
-            $(".Navbar").prepend("<a class='active' href=" + ProfileURL + ">Welcome, " + Profile.first + "</a>");
+            // $(".Navbar").prepend("<a href='" + MeetupURL + "'>Meetups</a>");
+            $(".Navbar .profile-nav").attr("href", ProfileURL);
+            $(".Navbar .profile-nav").text("Welcome, " + Profile.first);
         })
     });
 });

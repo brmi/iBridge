@@ -11,6 +11,10 @@ $(document).ready(function() {
     let firstname = 'NO FIRSTNAME';
     let lastname = 'NO LASTNAME';
 
+    // Navbar: Set Active state to meetups
+    console.log('here');
+    $('.meetups-nav').addClass('active');
+
     Firestore.collection("Meetups").get().then(function(Query){
         Query.forEach(function(Doc) {
             const Meetup = Doc.data();

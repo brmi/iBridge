@@ -12,12 +12,20 @@
     <script src="./common.js"></script>
 
     <script src="./meetups.js?newversion"></script>
-
-    <!-- Navbar -->
-    <script>$(function(){$("#Navbar").load("navbar.html");});</script>
-    <div id="Navbar"></div>
+     <!-- Navbar -->
+    <script src="navbar.js"></script>
+    <link href="./navbar.css" rel="stylesheet"/>
+    
+    <!-- <script>$(function(){$("#Navbar").load("navbar.html");});</script>
+    <div id="Navbar"></div> -->
 </head>
 <body>
+    <div class="Navbar">
+        <a class='profile-nav' href="#">Welcome ...</a>
+        <a class='meetups-nav active' href="./meetups.html">Meetups</a>
+        <a class='search-nav' href="./search.html">Search</a>
+        <a class='homepage-nav' href="./index.html">Logout</a>
+    </div>
     <div class="Error"></div>
     <div class='wrapper'>
         <div class='intro'>
