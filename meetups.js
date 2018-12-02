@@ -1,18 +1,16 @@
-// var Firestore = InitFirestore();
-
+if (!firebase.apps.length) {
+    var Firestore = InitFirestore();
+ } else {
+     var Firestore = getFirebase();
+}
 $(document).ready(function() {
-    if (!firebase.apps.length) {
-        var Firestore = InitFirestore();
-     } else {
-         var Firestore = getFirebase();
-    }
+    
     const MyID = parseInt(GetCookie("auth"));
     var MaxMeetupID = 0;
     let firstname = 'NO FIRSTNAME';
     let lastname = 'NO LASTNAME';
 
     // Navbar: Set Active state to meetups
-    console.log('here');
     $('.meetups-nav').addClass('active');
 
     Firestore.collection("Meetups").get().then(function(Query){
