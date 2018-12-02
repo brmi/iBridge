@@ -65,7 +65,9 @@ input.editing {
 .fa-plus {
     font-size: 24px;
 }
-
+.fa-plus:hover {
+    background-color: rgb(142, 237, 141) !important;
+}
 .fa-trash {
     margin-left: 2px;
 }
