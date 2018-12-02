@@ -1,6 +1,17 @@
 $(document).ready(() => {
     var Firestore = InitFirestore();
 
+    var pic;
+    //Profile photo upload
+    var fileButton = document.getElementById('photoUpload');
+    //Listen for file selection
+    fileButton.addEventListener('change', function(e) {
+        // Get file
+        pic = e.target.files[0];
+        // TODO: Update profile pic on the page
+        //document.getElementById('picUpdate').src = pic;
+    });
+
     $(".done").on("click", function(){
         const Email = $("#email").val();
         const Password = $("#password").val();
@@ -19,7 +30,7 @@ $(document).ready(() => {
             $(".FieldError").show();
             return;
         }
-        
+
         Firestore.collection("Accounts").get().then(function(Query){
             var NewAccountID = -1;
             var EmailIsInUse = false;
@@ -60,6 +71,14 @@ $(document).ready(() => {
                     window.location.href = "profile.html?id=" + NewAccountID;
                     // window.location.href = "https://brmi.github.io/iBridge/profile.html?id=" + NewAccountID;
                 });
+
+                // Create a storage ref
+                var storageRef = firebase.storage().ref(NewAccountID + '/' + pic.name);
+                // Upload File
+                var task = storageRef.put(pic);
+                task.on('state_changed', function error(err){
+                }
+                );
             }
         });
     });

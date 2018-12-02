@@ -10,56 +10,64 @@
     <script src="./common.js"></script>
     <script src="./signUp.js"></script>
 
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="signUp.css">
-  <title>iBridge - SignUp</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="signUp.css">
+    <title>iBridge - SignUp</title>
 
 </head>
 
 <body>
     <nav><a href='./index.html'>iBridge</a></nav>
-  <main>
-    <h1>Sign Up</h1>
-      <div class='profileInfo'>
-        <div class="grid-container">
-        <div class='profile-pic'>
-            <img class='avatar' src="images/photo-camera.svg" alt="Avatar">
+    <main>
+        <h1>Sign Up</h1>
+        <div class='profileInfo'>
+            <div class="grid-container">
+                <div class='profile-pic' >
+                    <img class='avatar' id="picUpdate" src="images/photo-camera.svg" alt="Avatar">
+                </div>
+                <div class="chooseFile">
+                    <input type="file" id="photoUpload">
+                </div>
+
+                <div class='email'>
+                    <input type="text" id="email" required placeholder="Email" />
+                    <input type="password" id="password" required placeholder="Password" />
+                </div>
+                <div class="name">
+                    <input type="text" id="firstname" required placeholder="First Name" />
+                    <input type="text" id="lastname" required placeholder="Last Name" />
+                </div>
+                <div class="country">
+                    <input type="text" id="nationality" required placeholder="Country" />
+                </div>
+                <div class="role">
+                    <input type="radio" name="role" value="Mentor">Mentor</input>
+                    <input type="radio" name="role" value="Mentee">Mentee</input>
+                </div>
+                <div class="school">
+                    <input type="text" id="school" required placeholder="School" />
+                </div>
+                <div class="major">
+                    <input type="text" id="major" required placeholder="Major" />
+                </div>
+                <div class='bio'>
+                    <textarea id="textarea" required rows="5" cols="30" placeholder="Bio"></textarea>
+                </div>
+            </div>
+            <div class='signup'>
+                <button class='signup done'>Done</button>
+            </div>
         </div>
-        
-        <div class='email'>
-          <input type="text" id="email" required placeholder="Email" />
-          <input type="password" id="password" required placeholder="Password" />
-        </div>
-        <div class="name">
-            <input type="text" id="firstname" required placeholder="First Name" />
-            <input type="text" id="lastname" required placeholder="Last Name" />
-        </div>
-        <div class="country">
-          <input type="text" id="nationality" required placeholder="Country" />
-        </div>
-        <div class="role">
-          <input type="radio" name="role" value="Mentor">Mentor</input>
-          <input type="radio" name="role" value="Mentee">Mentee</input>
-        </div>
-        <div class="school">
-            <input type="text" id="school" required placeholder="School" />
-        </div>
-        <div class="major">
-          <input type="text" id="major" required placeholder="Major" />
-        </div>
-        <div class='bio'>
-          <textarea id="textarea" required rows="5" cols="30" placeholder="Bio"></textarea>
-        </div>
-        </div>
-        <div class='signup'>
-            <button class='signup done'>Done</button>
-        </div>
-    </div>
     </main>
 
 
 
-    <div class='EmailError' hidden><p>Email already in use.</p></div>
-    <div class='FieldError' hidden><p>Fields cannot be empty.</p></div>
+    <div class='EmailError' hidden>
+        <p>Email already in use.</p>
+    </div>
+    <div class='FieldError' hidden>
+        <p>Fields cannot be empty.</p>
+    </div>
 </body>
+
 </html>

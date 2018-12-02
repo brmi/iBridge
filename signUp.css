@@ -61,8 +61,6 @@ p.center {
   /* width: 100px; */
   margin: 0 auto;
   justify-content: flex-start;
-  grid-column: col / span 1;
-  grid-row: row / span 1;
 }
 
 .profile-pic {
@@ -84,9 +82,14 @@ p.center {
   width: 40px;
   object-fit: fill;
 }
-.profile-pic:hover {
+.chooseFile {
+    grid-column: col / span 1;
+    grid-row: row 2/ span 1;
+}
+.chooseFile input:hover {
   cursor: pointer;
 }
+
 .email {
   grid-column: col 2 / span 1;
   grid-row: row 1/span 2;
