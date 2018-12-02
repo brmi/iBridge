@@ -12,6 +12,10 @@ $(document).ready(() => {
         //document.getElementById('picUpdate').src = pic;
     });
 
+    SetAutocomplete("#nationality", GetCountries(), function(){});
+    SetAutocomplete("#school", Universities, function(){});
+    SetAutocomplete("#major", Majors, function(){});
+
     $(".done").on("click", function(){
         const Email = $("#email").val();
         const Password = $("#password").val();
@@ -22,8 +26,6 @@ $(document).ready(() => {
         const School = $("#school").val();
         const Major = $("#major").val();
         const Bio = $("#textarea").val();
-
-        console.log(Email, Password, FirstName, LastName, Nationality, UserType, School, Major, Bio);
 
         if (!(Email && Password && FirstName && LastName && Nationality && UserType && Major && Bio && School)) {
             $(".EmailError").hide();

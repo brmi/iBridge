@@ -2,8 +2,11 @@ $(document).ready(() => {
     var Firestore = InitFirestore();
     const MyID = parseInt(GetCookie("auth"));
 
-    var Toggle = true;
+    SetAutocomplete(".School", Universities, function(){});
+    SetAutocomplete(".Major", Majors, function(){});
+    SetAutocomplete(".Nationality", GetCountries(), function(){});
 
+    var Toggle = true;
     $(".AddInterest").on("click", function(){
         if (Toggle) {
             $("<input type='text' class='InterestInput'>").insertBefore(this);

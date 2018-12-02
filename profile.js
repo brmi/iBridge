@@ -189,6 +189,8 @@ function AllowEditing(Firestore, MyID) {
             $(this).text("");
             $("<button id='SaveSchool'>Save</button>").insertAfter(this);
             $("<input class='editing' type='text' id='EditSchool' value='" + School + "'>").insertAfter(this);
+            SetAutocomplete("#EditSchool", Universities, function(){});
+
             $("#SaveSchool").on("click", function(){
                 const NewSchool = $("#EditSchool").val();
                 $("#EditSchool").remove();
@@ -211,6 +213,7 @@ function AllowEditing(Firestore, MyID) {
     });
 
     var IsEditingCountry = false;
+    var Countries = null;
 
     $("#Country").on("click", function(){
         if (!IsEditingCountry) {
@@ -218,6 +221,12 @@ function AllowEditing(Firestore, MyID) {
             $(this).text("");
             $("<button id='SaveCountry'>Save</button>").insertAfter(this);
             $("<input class='editing' type='text' id='EditCountry' value='" + Country + "'>").insertAfter(this);
+            if (!Countries) {
+                Countries = GetCountries();
+            } else {
+                SetAutocomplete("#EditCountry", Countries, function(){});
+            }
+
             $("#SaveCountry").on("click", function(){
                 const NewCountry = $("#EditCountry").val();
                 $("#EditCountry").remove();
@@ -246,6 +255,8 @@ function AllowEditing(Firestore, MyID) {
             $(this).text("");
             $("<button id='SaveMajor'>Save</button>").insertAfter(this);
             $("<input class='editing' type='text' id='EditMajor' value='" + Major + "'>").insertAfter(this);
+            SetAutocomplete("#EditMajor", Majors, function(){});
+
             $("#SaveMajor").on("click", function(){
                 const NewMajor = $("#EditMajor").val();
                 $("#EditMajor").remove();
