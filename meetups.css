@@ -36,8 +36,8 @@ h1,h2,p {
 
 button:hover {
     cursor: pointer;
-    color: white;
-    background-color: blue !important;
+    background-color: rgb(214, 48, 103) !important;
+    color: #fff !important;
 }
 button.create, button.add-meetup, button.cancel-meetup, button.attend-meetup, button.do-not-attend-meetup {
     width: 100px;
@@ -50,6 +50,10 @@ button.create, button.add-meetup, button.cancel-meetup, button.attend-meetup, bu
 
 button.do-not-attend-meetup:hover {
     background-color:  rgb(235, 96, 96) !important;
+}
+
+button.attend-meetup:hover {
+    background-color:  rgb(142, 237, 141) !important;
 }
 
 button.attend {
