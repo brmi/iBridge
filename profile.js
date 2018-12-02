@@ -117,7 +117,7 @@ function AllowEditing(Firestore, MyID) {
     /* Edit tips */
     var IsEditingTip = false;
 
-    $(".AddTipPlaceholder").append('<i class="fas fa-plus" id="AddTip" style="cursor:pointer;"></i>');
+    $(".AddTipPlaceholder").append('<button class="fas fa-plus" id="AddTip" style="cursor:pointer;"></button>');
 
     $("#AddTip").on("click", function(){
         if (!IsEditingTip) {

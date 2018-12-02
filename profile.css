@@ -65,9 +65,11 @@ input.editing {
 .fa-plus {
     font-size: 24px;
 }
+
 .fa-plus:hover {
     background-color: rgb(142, 237, 141) !important;
 }
+
 .fa-trash {
     margin-left: 2px;
 }
@@ -155,6 +157,17 @@ button#CreateTip {
     margin-right: 8px;
 }
 
+#AddTip {
+    padding: 5px 10px;
+    height: 30px;
+    background-color: rgb(236, 236, 236);
+    border: none;
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 8px;
+    position: relative;
+    bottom: 5px;
+}
 .InterestText {
     position: relative;
     bottom: 2px;
