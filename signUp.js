@@ -6,13 +6,13 @@ $(document).ready(() => {
     var fileButton = document.getElementById('photoUpload');
     //Listen for file selection
     fileButton.addEventListener('change', function(e) {
-        // Get file
+        //Get file
         pic = e.target.files[0];
-        // TODO: Update profile pic on the page
-        //document.getElementById('picUpdate').src = pic;
+        //Update profile pic on the page
+        $(".avatar").attr('src', window.URL.createObjectURL(pic));
     });
 
-    $(".done").on("click", function(){
+    $(".done").on("click", function() {
         const Email = $("#email").val();
         const Password = $("#password").val();
         const FirstName = $("#firstname").val();
@@ -31,11 +31,11 @@ $(document).ready(() => {
             return;
         }
 
-        Firestore.collection("Accounts").get().then(function(Query){
+        Firestore.collection("Accounts").get().then(function(Query) {
             var NewAccountID = -1;
             var EmailIsInUse = false;
 
-            Query.forEach(function(Doc){
+            Query.forEach(function(Doc) {
                 const Account = Doc.data();
                 if (Account.email == Email) {
                     EmailIsInUse = true;
@@ -66,7 +66,7 @@ $(document).ready(() => {
                     id: NewAccountID
                 })
 
-                Promise.all([Step1, Step2]).then(function(Values){
+                Promise.all([Step1, Step2]).then(function(Values) {
                     SetCookie("auth", NewAccountID, 0.1);
                     window.location.href = "profile.html?id=" + NewAccountID;
                     // window.location.href = "https://brmi.github.io/iBridge/profile.html?id=" + NewAccountID;
@@ -76,9 +76,7 @@ $(document).ready(() => {
                 var storageRef = firebase.storage().ref(NewAccountID + '/' + pic.name);
                 // Upload File
                 var task = storageRef.put(pic);
-                task.on('state_changed', function error(err){
-                }
-                );
+                task.on('state_changed', function error(err) {});
             }
         });
     });
