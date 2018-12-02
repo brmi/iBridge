@@ -52,7 +52,7 @@ button.do-not-attend-meetup:hover {
     background-color:  rgb(235, 96, 96) !important;
 }
 
-button.attend-meetup:hover {
+button.attend-meetup:hover, button.create:hover, button.add-meetup:hover {
     background-color:  rgb(142, 237, 141) !important;
 }
 
