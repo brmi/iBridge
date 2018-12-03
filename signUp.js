@@ -57,6 +57,8 @@ $(document).ready(() => {
                     id: ++NewAccountID
                 });
 
+                var refPath = NewAccountID + "/" + pic.name;
+
                 var Step2 = Firestore.collection("Profiles").add({
                     bio: Bio,
                     country: Nationality,
@@ -65,7 +67,8 @@ $(document).ready(() => {
                     major: Major,
                     school: School,
                     usertype: UserType,
-                    id: NewAccountID
+                    id: NewAccountID,
+                    photoPath: refPath
                 })
 
                 Promise.all([Step1, Step2]).then(function(Values) {
@@ -75,7 +78,7 @@ $(document).ready(() => {
                 });
 
                 // Create a storage ref
-                var storageRef = firebase.storage().ref(NewAccountID + '/' + pic.name);
+                var storageRef = firebase.storage().ref(refPath);
                 // Upload File
                 var task = storageRef.put(pic);
                 task.on('state_changed', function error(err) {});

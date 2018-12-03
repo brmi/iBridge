@@ -1,8 +1,8 @@
 $(document).ready(() => {
     if (!firebase.apps.length) {
         var Firestore = InitFirestore();
-     } else {
-         var Firestore = getFirebase();
+    } else {
+        var Firestore = getFirebase();
     }
     const ProfileID = parseInt(GetParam("id"));
     const MyID = parseInt(GetCookie("auth"));
@@ -12,21 +12,33 @@ $(document).ready(() => {
         bAllowEditing = true;
     }
 
-    Firestore.collection("Profiles").where("id", "==", ProfileID).get().then(function(Query){
-        Query.forEach(function(Doc){
+    Firestore.collection("Profiles").where("id", "==", ProfileID).get().then(function(Query) {
+        Query.forEach(function(Doc) {
             const Profile = Doc.data();
             let name = Profile.first + ' ' + Profile.last;
             $("#Name").text(name.toString());
-            $("#Major").html(`<i class="fas fa-book"></i>`+Profile.major);
+            $("#Major").html(`<i class="fas fa-book"></i>` + Profile.major);
             $("#UserType").html(`<i class="fas fa-smile"></i>` + Profile.usertype);
             $("#School").html(`<i class="fas fa-university"></i>` + Profile.school);
             $("#Country").html(`<i class="fas fa-flag"></i>` + Profile.country);
             $("#Description").text(Profile.bio);
+
+            //retrieve profile photo
+            var refPath = "\'" + Profile.photoPath + "\'";
+            console.log(refPath);
+            var storage = firebase.storage().ref();
+            var fileRef = storage.child(Profile.photoPath);
+            fileRef.getDownloadURL().then(function(url) {
+                var img = document.getElementById('profilePhoto');
+                img.src = url;
+            }).catch(function(error) {
+            });
+            
         });
     });
 
-    Firestore.collection("Interests").where("id", "==", ProfileID).get().then(function(Query){
-        Query.forEach(function(Doc){
+    Firestore.collection("Interests").where("id", "==", ProfileID).get().then(function(Query) {
+        Query.forEach(function(Doc) {
             const Interest = Doc.data();
             if (bAllowEditing) {
                 $(".Interests").append(CreateEditableInterest(Interest.interest));
@@ -36,11 +48,11 @@ $(document).ready(() => {
         });
 
         if (bAllowEditing) {
-            $(document).on("click", ".RemoveInterest", function(){
+            $(document).on("click", ".RemoveInterest", function() {
                 const Parent = $(this).closest(".Interest");
                 const Interest = $(Parent).find(".InterestText").text();
-                Firestore.collection("Interests").where("id", "==", MyID).where("interest", "==", Interest).get().then(function(Query){
-                    Query.forEach(function(Doc){
+                Firestore.collection("Interests").where("id", "==", MyID).where("interest", "==", Interest).get().then(function(Query) {
+                    Query.forEach(function(Doc) {
                         Doc.ref.delete();
                     });
                 });
@@ -51,7 +63,7 @@ $(document).ready(() => {
 
             var Toggle = true;
 
-            $(".AddInterest").on("click", function(){
+            $(".AddInterest").on("click", function() {
                 if (Toggle) {
                     $("<input type='text' class='InterestInput'>").insertBefore(this);
                     $(".InterestInput").focus();
@@ -71,11 +83,11 @@ $(document).ready(() => {
         }
     });
 
-    Firestore.collection("Tips").where("id", "==", ProfileID).get().then(function(Query){
+    Firestore.collection("Tips").where("id", "==", ProfileID).get().then(function(Query) {
         if (Query.empty) {
             $(".top-tips").append("<p class='no-tips'>You haven't created any tips yet.</p>");
         } else {
-            Query.forEach(function(Doc){
+            Query.forEach(function(Doc) {
                 const Tip = Doc.data();
                 if (bAllowEditing) {
                     AddEditableTip(Firestore, MyID, Tip.tip);
@@ -86,19 +98,19 @@ $(document).ready(() => {
         }
     });
 
-    Firestore.collection("Meetups").where("createdby", "==", ProfileID).get().then(function(Query){
+    Firestore.collection("Meetups").where("createdby", "==", ProfileID).get().then(function(Query) {
         if (Query.empty) {
             $("#ListOfMeetups").append("<li class='Meetup'><p class='MeetupName'>You haven't created any meetups.</p><p class='MeetupDescription'>Visit the Meetups tab to create one!</p></li>");
         } else {
-            Query.forEach(function(Doc){
+            Query.forEach(function(Doc) {
                 const Meetup = Doc.data();
                 let MeetupHTML = `<div class='meetup-item'>
                 <div class='event'>
-                    <h2 class='meetup-title'>`+ Meetup.name +`</h2>
-                    <p class='description'>` + Meetup.description +`</p>
+                    <h2 class='meetup-title'>` + Meetup.name + `</h2>
+                    <p class='description'>` + Meetup.description + `</p>
                     <div class='details'>
-                        <p>`+ Meetup.location +`</p>
-                        <p>`+ Meetup.time +`</p>
+                        <p>` + Meetup.location + `</p>
+                        <p>` + Meetup.time + `</p>
                     </div>
                 </div>
             </div>`;
@@ -119,7 +131,7 @@ function AllowEditing(Firestore, MyID) {
 
     $(".AddTipPlaceholder").append('<button class="fas fa-plus" id="AddTip" style="cursor:pointer;"></button>');
 
-    $("#AddTip").on("click", function(){
+    $("#AddTip").on("click", function() {
         if (!IsEditingTip) {
             IsEditingTip = true;
             const CreateTipField = '<li id="TipInput"><input type="text" name="AddTipText"><button id="CreateTip">Add Tip</button></li>';
@@ -128,11 +140,11 @@ function AllowEditing(Firestore, MyID) {
 
             $("input").focus();
 
-            $(document).off().on("click", "#CreateTip", function(){
+            $(document).off().on("click", "#CreateTip", function() {
                 IsEditingTip = false;
                 const Tip = $("input").val();
 
-                if (Tip != null && Tip != ""&& !TipAlreadyExists(Tip)) {
+                if (Tip != null && Tip != "" && !TipAlreadyExists(Tip)) {
                     Firestore.collection("Tips").add({
                         id: MyID,
                         tip: Tip
@@ -147,17 +159,19 @@ function AllowEditing(Firestore, MyID) {
 
     /* Edit bio */
     var IsEditingBio = false;
-    
-    $(document).on("click", ".EditBio", function(){
+
+    $(document).on("click", ".EditBio", function() {
         if (IsEditingBio) {
             const EditBioBox = $("#EditBioBox");
             const NewBio = EditBioBox.val();
 
             $("#Description").text(NewBio);
 
-            Firestore.collection("Profiles").where("id", "==", MyID).get().then(function(Query){
-                Query.forEach(function(Doc){
-                    Doc.ref.update({bio: NewBio});
+            Firestore.collection("Profiles").where("id", "==", MyID).get().then(function(Query) {
+                Query.forEach(function(Doc) {
+                    Doc.ref.update({
+                        bio: NewBio
+                    });
                 });
             });
 
@@ -183,15 +197,15 @@ function AllowEditing(Firestore, MyID) {
     $("#School").css("cursor", "pointer");
     $("#Country").css("cursor", "pointer");
 
-    $("#School").on("click", function(){
+    $("#School").on("click", function() {
         if (!IsEditingSchool) {
             const School = $(this).text();
             $(this).text("");
             $("<button id='SaveSchool'>Save</button>").insertAfter(this);
             $("<input class='editing' type='text' id='EditSchool' value='" + School + "'>").insertAfter(this);
-            SetAutocomplete("#EditSchool", Universities, function(){});
+            SetAutocomplete("#EditSchool", Universities, function() {});
 
-            $("#SaveSchool").on("click", function(){
+            $("#SaveSchool").on("click", function() {
                 const NewSchool = $("#EditSchool").val();
                 $("#EditSchool").remove();
                 $("#SaveSchool").remove();
@@ -199,13 +213,15 @@ function AllowEditing(Firestore, MyID) {
                     $("#School").html(`<i class="fas fa-university"></i>` + School);
                 } else {
                     $("#School").text(NewSchool);
-                    Firestore.collection("Profiles").where("id", "==", MyID).get().then(function(Query){
-                        Query.forEach(function(Doc){
-                            Doc.ref.update({school: NewSchool});
+                    Firestore.collection("Profiles").where("id", "==", MyID).get().then(function(Query) {
+                        Query.forEach(function(Doc) {
+                            Doc.ref.update({
+                                school: NewSchool
+                            });
                         });
                     });
                 }
-                
+
                 IsEditingSchool = false;
             });
             IsEditingSchool = true;
@@ -215,7 +231,7 @@ function AllowEditing(Firestore, MyID) {
     var IsEditingCountry = false;
     var Countries = null;
 
-    $("#Country").on("click", function(){
+    $("#Country").on("click", function() {
         if (!IsEditingCountry) {
             const Country = $(this).text();
             $(this).text("");
@@ -224,10 +240,10 @@ function AllowEditing(Firestore, MyID) {
             if (!Countries) {
                 Countries = GetCountries();
             } else {
-                SetAutocomplete("#EditCountry", Countries, function(){});
+                SetAutocomplete("#EditCountry", Countries, function() {});
             }
 
-            $("#SaveCountry").on("click", function(){
+            $("#SaveCountry").on("click", function() {
                 const NewCountry = $("#EditCountry").val();
                 $("#EditCountry").remove();
                 $("#SaveCountry").remove();
@@ -235,9 +251,11 @@ function AllowEditing(Firestore, MyID) {
                     $("#Country").html(`<i class="fas fa-flag"></i>` + Country);
                 } else {
                     $("#Country").html(`<i class="fas fa-flag"></i>` + NewCountry);
-                    Firestore.collection("Profiles").where("id", "==", MyID).get().then(function(Query){
-                        Query.forEach(function(Doc){
-                            Doc.ref.update({country: NewCountry});
+                    Firestore.collection("Profiles").where("id", "==", MyID).get().then(function(Query) {
+                        Query.forEach(function(Doc) {
+                            Doc.ref.update({
+                                country: NewCountry
+                            });
                         });
                     });
                 }
@@ -249,15 +267,15 @@ function AllowEditing(Firestore, MyID) {
 
     var IsEditingMajor = false;
 
-    $("#Major").on("click", function(){
+    $("#Major").on("click", function() {
         if (!IsEditingMajor) {
             const Major = $(this).text();
             $(this).text("");
             $("<button id='SaveMajor'>Save</button>").insertAfter(this);
             $("<input class='editing' type='text' id='EditMajor' value='" + Major + "'>").insertAfter(this);
-            SetAutocomplete("#EditMajor", Majors, function(){});
+            SetAutocomplete("#EditMajor", Majors, function() {});
 
-            $("#SaveMajor").on("click", function(){
+            $("#SaveMajor").on("click", function() {
                 const NewMajor = $("#EditMajor").val();
                 $("#EditMajor").remove();
                 $("#SaveMajor").remove();
@@ -265,9 +283,11 @@ function AllowEditing(Firestore, MyID) {
                     $("#Major").html(`<i class="fas fa-book"></i>` + Major);
                 } else {
                     $("#Major").html(`<i class="fas fa-book"></i>` + NewMajor);
-                    Firestore.collection("Profiles").where("id", "==", MyID).get().then(function(Query){
-                        Query.forEach(function(Doc){
-                            Doc.ref.update({major: NewMajor});
+                    Firestore.collection("Profiles").where("id", "==", MyID).get().then(function(Query) {
+                        Query.forEach(function(Doc) {
+                            Doc.ref.update({
+                                major: NewMajor
+                            });
                         });
                     });
                 }
@@ -279,13 +299,13 @@ function AllowEditing(Firestore, MyID) {
 
     var IsEditingUserType = false;
 
-    $("#UserType").on("click", function(){
+    $("#UserType").on("click", function() {
         if (!IsEditingUserType) {
             const UserType = $(this).text();
             $(this).text("");
             $("<button id='SaveUserType'>Save</button>").insertAfter(this);
             $("<input class='editing' type='text' id='EditUserType' value='" + UserType + "'>").insertAfter(this);
-            $("#SaveUserType").on("click", function(){
+            $("#SaveUserType").on("click", function() {
                 const NewUserType = $("#EditUserType").val();
                 $("#EditUserType").remove();
                 $("#SaveUserType").remove();
@@ -293,9 +313,11 @@ function AllowEditing(Firestore, MyID) {
                     $("#UserType").html(`<i class="fas fa-book"></i>` + UserType);
                 } else {
                     $("#UserType").html(`<i class="fas fa-book"></i>` + NewUserType);
-                    Firestore.collection("Profiles").where("id", "==", MyID).get().then(function(Query){
-                        Query.forEach(function(Doc){
-                            Doc.ref.update({usertype: NewUserType});
+                    Firestore.collection("Profiles").where("id", "==", MyID).get().then(function(Query) {
+                        Query.forEach(function(Doc) {
+                            Doc.ref.update({
+                                usertype: NewUserType
+                            });
                         });
                     });
                 }
@@ -319,12 +341,12 @@ function TipAlreadyExists(Tip) {
 function AddEditableTip(Firestore, MyID, Tip) {
     const HTML = "<li><span class='Tip'>" + Tip + "<i class='fas fa-trash RemoveTip' aria-hidden='true' style='cursor:pointer;'></i></span></li>";
     $(".ListOfTips").append(HTML);
-    $(".Tip").hover(function(Event){
+    $(".Tip").hover(function(Event) {
         if (Event.type == "mouseenter") {
-            $(".RemoveTip").on("click", function(){
+            $(".RemoveTip").on("click", function() {
                 const Text = $(this).closest("span").text();
-                Firestore.collection("Tips").where("id", "==", MyID).where("tip","==",Text).get().then(function(Query){
-                    Query.forEach(function(Doc){
+                Firestore.collection("Tips").where("id", "==", MyID).where("tip", "==", Text).get().then(function(Query) {
+                    Query.forEach(function(Doc) {
                         Doc.ref.delete();
                     });
                 });
@@ -344,7 +366,7 @@ function CreateEditableInterest(Interest) {
 
 function HasInterest(Interest) {
     var HasInterest = false;
-    $(".InterestText").each(function(i, Obj){
+    $(".InterestText").each(function(i, Obj) {
         const Span = $(Obj).text();
         if (Span == Interest) {
             HasInterest = true;
