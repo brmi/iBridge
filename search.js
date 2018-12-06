@@ -79,8 +79,23 @@ $(document).ready(() => {
 
                 var InterestQuery = Firestore.collection("Interests");
                 
-                for (var Search of InterestsToSearch) {
-                    const InterestSearch = $(Search).text();
+                // for (var Search of InterestsToSearch) {
+                //     const InterestSearch = $(Search).text();
+                //     var SharedInterests = new Array();
+                //     InterestQuery.where("interest", "==", InterestSearch).get().then(function(Result){
+                //         Result.forEach(function(Doc){
+                //             const Interest = Doc.data();
+                //             if (Interest.id != MyID) {
+                //                 SharedInterests.push(Interest);
+                //             }
+                //         })
+                //     });                
+                // }
+
+                for(let i=0; i< InterestsToSearch.length; i++) {
+                    console.log(InterestsToSearch);
+                    const InterestSearch = InterestsToSearch[i].innerText;
+                    console.log(InterestSearch);
                     var SharedInterests = new Array();
                     InterestQuery.where("interest", "==", InterestSearch).get().then(function(Result){
                         Result.forEach(function(Doc){
