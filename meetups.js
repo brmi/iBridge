@@ -126,8 +126,7 @@ function CreateMeetupItem(Name, Description, Location, Time, MeetupID, MeetupFir
     const Button = bCreatedByMe ? `<button class='cancel-meetup' value="` + MeetupID + `">Cancel</button>` : AttendButton;
     const MeetupItem = `
         <div class='meetup-item'>
-            <div class='profile-pic'>
-                <img src='./images/kermit.png'/>
+            <div id="profilePhoto" class='profile-pic'>
                 <p class='name'>`+ MeetupFirstname +` ` + MeetupLastname + `</p>
             </div>
             <div class='event'>

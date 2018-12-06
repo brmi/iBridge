@@ -70,12 +70,19 @@ button.attend {
     justify-content: center;
     align-items: center;
     margin-right: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: palevioletred;
+
 }
 
 .profile-pic .name{
     font-weight:800;
-    padding-top: 10px;
+    /* padding-top: 10px; */
     text-align: center;
+    /* background-color: palevioletred; */
+    
 }
 
 .profile-pic img {
