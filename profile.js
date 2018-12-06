@@ -24,16 +24,16 @@ $(document).ready(() => {
             $("#Description").text(Profile.bio);
 
             //retrieve profile photo
-            var refPath = "\'" + Profile.photoPath + "\'";
-            console.log(refPath);
-            var storage = firebase.storage().ref();
-            var fileRef = storage.child(Profile.photoPath);
-            fileRef.getDownloadURL().then(function(url) {
-                var img = document.getElementById('profilePhoto');
-                img.src = url;
-            }).catch(function(error) {
-            });
-            
+            if(Profile.photoPath) {
+                var refPath = "\'" + Profile.photoPath + "\'";
+                var storage = firebase.storage().ref();
+                var fileRef = storage.child(Profile.photoPath);
+                fileRef.getDownloadURL().then(function(url) {
+                    var img = document.getElementById('profilePhoto');
+                    img.src = url;
+                }).catch(function(error) {
+                });
+            }
         });
     });
 
@@ -329,12 +329,16 @@ function AllowEditing(Firestore, MyID) {
 }
 
 function TipAlreadyExists(Tip) {
-    var ListItems = $(".ListOfTips li");
-    for (var Item of ListItems) {
-        if ($(Item).text() == Tip) {
-            return true;
+    let ListItems = $(".ListOfTips li");
+    console.log(ListItems);
+    if(ListItems.length > 1) {
+        for(let i=0; i< ListItems.length; i++) {
+            if ($(ListItems[i]).innerText == Tip) {
+                return true;
+            }
         }
     }
+    
     return false;
 }
 
