@@ -1,3 +1,83 @@
+html,body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-color: #faf9f7;
+}
+
+.wrapper {
+    padding-left: 80px;
+    padding-right: 100px;
+    width: calc(100vw - 200px);
+}
+
+nav {
+    background: palevioletred;
+    height: 10vh;
+    width: 100%;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+.School{
+	margin-bottom: 10px;
+    margin-top: 10px;
+}
+.Advanced button {
+    background-color: gainsboro;
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.HideAdvanced button {
+    background-color: gainsboro;
+    border: none;
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.AdvancedSearch{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.Major{
+	margin-left: 20px;
+}
+.intro{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+.sign{
+	margin-left: 10px;
+}
+
+.Interests{
+	margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.Interest{
+	margin-bottom: 20px;
+}
+.InterestInput{
+	margin-bottom: 20px;
+}
 .Search {
     cursor: pointer;    
 }
@@ -16,6 +96,9 @@ a:hover {
 
 .ListOfResults {
     list-style-type: none;
+    font-size: 14px;
+    font-weight: 800;
+    color: blue;
 }
 
 a.name {
