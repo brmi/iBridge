@@ -28,24 +28,32 @@
             <a class='search-nav active' href="./search.html">Search</a>
             <a class='homepage-nav' href="./index.html">Logout</a>
         </div>
-        <h1>Search Mentors</h1>
-        <div class="Error">
-            <p class="SchoolIsEmpty" hidden><b>Error: School required.</b></p>            
-        </div>
-        <input class="School" placeholder="School"><i class="fas fa-search Search"></i><br>
-        <div class="AdvancedSearch" hidden>
-            <input class="Nationality" placeholder="Nationality">
-            <input class="Major" placeholder="Major">
-            <div class="Interests">
-                <p>Interests: </p>
-                <button type='button' class='fas fa-plus btn btn-secondary AddInterest'></button>
+        <div class='wrapper'>
+            <div class='intro'>
+                <h1>Search Mentors</h1>
             </div>
-        </div>
-        <button class="Advanced">Advanced</button>
-        <button class="HideAdvanced" hidden>Hide Advanced</button>
-        <div class="Results">
-            <ul class="ListOfResults">
-            </ul>
+            <div class="Error">
+                <p class="SchoolIsEmpty" hidden><b>Error: School required.</b></p>            
+            </div>
+            <input class="School" placeholder="School"><i class="fas fa-search Search"></i><br>
+            <div class="AdvancedSearch" hidden>
+                <input class="Nationality" placeholder="Nationality">
+                <input class="Major" placeholder="Major">
+                <div class="Interests">
+                    <p>Interests: </p>
+                    <div class="sign">
+                        <button type='button' class='fas fa-plus btn btn-secondary AddInterest'></button>
+                    </div>
+                </div>
+            </div>
+            <div class="advanced">
+                <button class="Advanced">Advanced</button>
+                <button class="HideAdvanced" hidden>Hide Advanced</button>
+            </div>
+            <div class="Results">
+                <ul class="ListOfResults">
+                </ul>
+            </div>
         </div>
     </body>
 
